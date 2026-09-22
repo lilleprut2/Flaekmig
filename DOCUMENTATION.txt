@@ -1,0 +1,104 @@
+Flaekmig - File and Plugin Documentation
+========================================
+
+This document describes the purpose and functionality of the core modules and sample plugins included in this MVP scaffold.
+
+Core
+----
+
+- core/models.py
+  - Data models and plugin interface.
+  - `Target`: represents a scan target (host + metadata).
+  - `PortInfo`: simple port record with `port`, `proto`, `state`.
+  - `ScanResult`: plugin output container (raw output, parsed ports/services).
+  - `Recommendation`: suggested next tool with `tool`, `reason`, `confidence`.
+  - `Plugin` (Protocol): required interface for plugins. Plugins should expose:
+    - `name`, `description`, `required_binary`, `supported_targets` attributes.
+    - `run(self, target: Target) -> ScanResult` to execute the tool.
+    - `parse(self, output: str) -> ScanResult` to parse raw output.
+
+- core/rules.py
+  - Rule system used by the Engine to produce recommendations.
+  - `Rule` dataclass encapsulates a `condition(scan: ScanResult) -> bool` and
+    a list of `Recommendation` objects returned when the condition is met.
+  - `default_rules()` provides example rules mapping discovered ports to recommended
+    follow-up tools (HTTP -> `gobuster`, `nuclei`, `whatweb`; SMB -> `enum4linux`, `crackmapexec`; LDAP -> BloodHound collector).
+
+- core/engine.py
+  - Central decision engine coordinating plugins and rules.
+  - `Engine` provides:
+    - `register_plugin(plugin)` to register plugin instances.
+    - `run_target(target_str, plugin_names=None)` to run chosen plugins against a `Target` and evaluate rules.
+  - Returns `EngineResult` containing `scan_results` and deduplicated `recommendations`.
+  - Checks plugin `required_binary` via `shutil.which()` and skips plugin if binary missing.
+
+- core/workflow.py
+  - Minimal workflow utilities.
+  - `prioritize(recommendations)` orders recommendations by confidence.
+
+CLI
+---
+
+- main.py
+  - Minimal CLI entrypoint.
+  - Parses a target and optional plugin name list.
+  - Creates an `Engine`, registers the sample `nmap` plugin, runs the scan, and prints recommendations.
+
+Plugins
+-------
+
+- plugins/__init__.py
+  - Packages the plugins folder. Keeps the module importable.
+
+- plugins/nmap/plugin.py
+  - Minimal `NmapPlugin` implementation that follows the `Plugin` protocol.
+  - Attributes: `name = 'nmap'`, `description`, `required_binary = 'nmap'`, `supported_targets`.
+  - `run(target)` executes `nmap -sS -p- -oG - <target>` using `subprocess` and returns parsed results.
+  - `parse(output)` extracts port lines from nmap greppable output and builds `PortInfo` objects.
+  - Behavior: if `nmap` is not present on the system, `run()` raises `RuntimeError` and Engine will record the failure but continue.
+
+Tests
+-----
+
+- tests/test_engine.py
+  - Unit test that registers a `FakePlugin` producing ports 80 and 445.
+  - Validates that engine rules return expected recommendations (HTTP and SMB related tools present).
+
+Configs & Docs
+--------------
+
+- configs/README.md
+  - Placeholder for configuration files (JSON/INI). MVP uses no external config by default.
+
+- README.md
+  - High-level project overview and design principles.
+
+Usage notes
+-----------
+
+- Running the CLI (example):
+
+  python3 main.py 127.0.0.1
+
+- Running tests:
+
+  python3 -m unittest discover -v
+
+Extending the project
+---------------------
+
+- Plugins should be small, single-responsibility modules implementing `run` and `parse`.
+- Add new rules to `core/rules.py` or supply a rule-loading mechanism (from JSON or Python modules).
+- Add dynamic plugin discovery in `core/engine.py` (future improvement) or register plugins explicitly.
+
+Future integrations (non-MVP)
+----------------------------
+
+- Local AI / Ollama adapters (optional, disabled by default).
+- Neo4j exporter (for Attack Path Analysis / graph storage).
+- BloodHound collector wrappers and formatters.
+
+Contact
+-------
+
+For further enhancements, propose the integration (plugin name + CLI flags + expected output) and I can scaffold it.

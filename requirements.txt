@@ -1,0 +1,2 @@
+# Minimal development requirements for Flaekmig MVP
+pytest
