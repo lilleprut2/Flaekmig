@@ -1,0 +1,107 @@
+{
+  "os": "macOS-26.6.1-x86_64-i386-64bit",
+  "python_executable": "/Library/Developer/CommandLineTools/usr/bin/python3",
+  "python_version": "3.9.6",
+  "tools": {
+    "nmap": {
+      "binary": null,
+      "python": null
+    },
+    "rustscan": {
+      "binary": null,
+      "python": null
+    },
+    "masscan": {
+      "binary": "/usr/local/bin/masscan",
+      "python": null
+    },
+    "httpx": {
+      "binary": null,
+      "python": null
+    },
+    "amass": {
+      "binary": "/usr/local/bin/amass",
+      "python": null
+    },
+    "subfinder": {
+      "binary": "/usr/local/bin/subfinder",
+      "python": null
+    },
+    "dnsx": {
+      "binary": null,
+      "python": null
+    },
+    "whatweb": {
+      "binary": null,
+      "python": null
+    },
+    "ffuf": {
+      "binary": null,
+      "python": null
+    },
+    "gobuster": {
+      "binary": "/usr/local/bin/gobuster",
+      "python": null
+    },
+    "katana": {
+      "binary": "/usr/local/bin/katana",
+      "python": null
+    },
+    "nuclei": {
+      "binary": "/usr/local/bin/nuclei",
+      "python": null
+    },
+    "nikto": {
+      "binary": "/usr/local/bin/nikto",
+      "python": null
+    },
+    "sqlmap": {
+      "binary": null,
+      "python": null
+    },
+    "wpscan": {
+      "binary": null,
+      "python": null
+    },
+    "enum4linux-ng": {
+      "binary": null,
+      "python": null
+    },
+    "smbmap": {
+      "binary": null,
+      "python": null
+    },
+    "netexec": {
+      "binary": null,
+      "python": null
+    },
+    "bloodhound-python": {
+      "binary": null,
+      "python": false
+    },
+    "kerbrute": {
+      "binary": null,
+      "python": null
+    },
+    "impacket": {
+      "binary": null,
+      "python": false
+    },
+    "searchsploit": {
+      "binary": null,
+      "python": null
+    },
+    "metasploit": {
+      "binary": null,
+      "python": null
+    },
+    "trivy": {
+      "binary": "/usr/local/bin/trivy",
+      "python": null
+    },
+    "scoutsuite": {
+      "binary": null,
+      "python": null
+    }
+  }
+}
