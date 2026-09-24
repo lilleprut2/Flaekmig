@@ -1,18 +1,18 @@
 {
-  "os": "macOS-26.6.1-x86_64-i386-64bit",
-  "python_executable": "/Library/Developer/CommandLineTools/usr/bin/python3",
-  "python_version": "3.9.6",
+  "os": "Linux-7.2.6-1-cachyos-x86_64-with-glibc2.44",
+  "python_executable": "/usr/bin/python",
+  "python_version": "3.14.7",
   "tools": {
     "nmap": {
-      "binary": null,
+      "binary": "/usr/bin/nmap",
       "python": null
     },
     "rustscan": {
-      "binary": null,
+      "binary": "/usr/bin/rustscan",
       "python": null
     },
     "masscan": {
-      "binary": "/usr/local/bin/masscan",
+      "binary": "/usr/bin/masscan",
       "python": null
     },
     "httpx": {
@@ -20,87 +20,87 @@
       "python": null
     },
     "amass": {
-      "binary": "/usr/local/bin/amass",
+      "binary": "/usr/bin/amass",
       "python": null
     },
     "subfinder": {
-      "binary": "/usr/local/bin/subfinder",
+      "binary": "/usr/bin/subfinder",
       "python": null
     },
     "dnsx": {
-      "binary": null,
+      "binary": "/usr/bin/dnsx",
       "python": null
     },
     "whatweb": {
-      "binary": null,
+      "binary": "/usr/bin/whatweb",
       "python": null
     },
     "ffuf": {
-      "binary": null,
+      "binary": "/usr/bin/ffuf",
       "python": null
     },
     "gobuster": {
-      "binary": "/usr/local/bin/gobuster",
+      "binary": "/usr/bin/gobuster",
       "python": null
     },
     "katana": {
-      "binary": "/usr/local/bin/katana",
+      "binary": null,
       "python": null
     },
     "nuclei": {
-      "binary": "/usr/local/bin/nuclei",
+      "binary": "/usr/bin/nuclei",
       "python": null
     },
     "nikto": {
-      "binary": "/usr/local/bin/nikto",
+      "binary": "/usr/bin/nikto",
       "python": null
     },
     "sqlmap": {
-      "binary": null,
+      "binary": "/usr/bin/sqlmap",
       "python": null
     },
     "wpscan": {
-      "binary": null,
+      "binary": "/usr/bin/wpscan",
       "python": null
     },
     "enum4linux-ng": {
-      "binary": null,
+      "binary": "/usr/bin/enum4linux-ng",
       "python": null
     },
     "smbmap": {
-      "binary": null,
+      "binary": "/usr/bin/smbmap",
       "python": null
     },
     "netexec": {
-      "binary": null,
+      "binary": "/usr/bin/netexec",
       "python": null
     },
     "bloodhound-python": {
-      "binary": null,
-      "python": false
+      "binary": "/usr/bin/bloodhound-python",
+      "python": true
     },
     "kerbrute": {
-      "binary": null,
+      "binary": "/usr/bin/kerbrute",
       "python": null
     },
     "impacket": {
       "binary": null,
-      "python": false
+      "python": true
     },
     "searchsploit": {
       "binary": null,
       "python": null
     },
     "metasploit": {
-      "binary": null,
+      "binary": "/usr/bin/msfconsole",
       "python": null
     },
     "trivy": {
-      "binary": "/usr/local/bin/trivy",
+      "binary": "/usr/bin/trivy",
       "python": null
     },
     "scoutsuite": {
-      "binary": null,
+      "binary": "/usr/bin/scoutsuite",
       "python": null
     }
   }

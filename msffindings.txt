@@ -1,0 +1,1578 @@
+=== Search: ftp syn-ack vsftpd 2.3.4
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: ssh syn-ack OpenSSH 4.7p1 Debian 8ubuntu1 (protocol 2.0)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: telnet syn-ack Linux telnetd
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: smtp syn-ack Postfix smtpd
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: domain syn-ack ISC BIND 9.4.2
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: http syn-ack Apache httpd 2.2.8 ((Ubuntu) DAV/2)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: rpcbind syn-ack 2 (RPC #100000)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: netbios-ssn syn-ack Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: exec syn-ack netkit-rsh rexecd
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: login syn-ack OpenBSD or Solaris rlogind
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: shell syn-ack Netkit rshd
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: java-rmi syn-ack GNU Classpath grmiregistry
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: bindshell syn-ack Metasploitable root shell
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: nfs syn-ack 2-4 (RPC #100003)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: ftp syn-ack ProFTPD 1.3.1
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: mysql syn-ack MySQL 5.0.51a-3ubuntu5
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: distccd syn-ack distccd v1 ((GNU) 4.2.4 (Ubuntu 4.2.4-1ubuntu4))
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: postgresql syn-ack PostgreSQL DB 8.3.0 - 8.3.7
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: vnc syn-ack VNC (protocol 3.3)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: X11 syn-ack (access denied)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: irc syn-ack UnrealIRCd
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: irc syn-ack UnrealIRCd (Admin email admin@Metasploitable.LAN)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: ajp13 syn-ack Apache Jserv (Protocol v1.3)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: http syn-ack Apache Tomcat/Coyote JSP engine 1.1
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: drb syn-ack Ruby DRb RMI (Ruby 1.8; path /usr/lib/ruby/1.8/drb)
+[0m[1m[31m[-][0m No results from search
+[0m[1m[31m[-][0m Unknown command: path. Run the [32mhelp[0m command for more details.
+[0m
+
+=== Search: status syn-ack 1 (RPC #100024)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: mountd syn-ack 1-3 (RPC #100005)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: nlockmgr syn-ack 1-4 (RPC #100021)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: vsftpd 2.3.4
+[0m
+Matching Modules
+================
+
+   #  Full Name                             Disclosure Date  Rank       Check  Name
+   -  ---------                             ---------------  ----       -----  ----
+   0  exploit/unix/ftp/[45mvsftpd[0m_234_backdoor  2011-07-03       [32mexcellent[0m  Yes    [45mVSFTPD[0m [45m2.3.4[0m Backdoor Command Execution
+
+
+Interact with a module by name or index. For example [32minfo 0[0m, [32muse 0[0m or [32muse exploit/unix/ftp/vsftpd_234_backdoor[0m
+
+[0m
+
+=== Search: OpenSSH 4.7p1 Debian 8ubuntu1 (protocol 2.0)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: Linux telnetd
+[0m
+Matching Modules
+================
+
+   #   Full Name                                              Disclosure Date  Rank       Check  Name
+   -   ---------                                              ---------------  ----       -----  ----
+   0   exploit/[45mlinux[0m/http/asuswrt_lan_rce                     2018-01-22       [32mexcellent[0m  No     AsusWRT LAN Unauthenticated Remote Code Execution
+   1   exploit/[45mlinux[0m/http/dlink_diagnostic_exec_noauth        2013-03-05       [32mexcellent[0m  No     D-Link DIR-645 / DIR-815 diagnostic.php Command Execution
+   2     \_ target: CMD                                       .                .          .      .
+   3     \_ target: [45mLinux[0m mipsel Payload                      .                .          .      .
+   4   exploit/[45mlinux[0m/telnet/gnu_inetutils_auth_bypass         2026-01-26       [32mgreat[0m      No     GNU Inetutils Telnet Authentication Bypass Exploit CVE-2026-24061
+   5   exploit/[45mlinux[0m/misc/hp_jetdirect_path_traversal         2017-04-05       normal     No     HP Jetdirect Path Traversal Arbitrary Code Execution
+   6   exploit/[45mlinux[0m/telnet/telnet_encrypt_keyid              2011-12-23       [32mgreat[0m      No     [45mLinux[0m BSD-derived Telnet Service Encryption Key ID Buffer Overflow
+   7     \_ target: Automatic                                 .                .          .      .
+   8     \_ target: Red Hat Enterprise [45mLinux[0m 3 (krb5-telnet)  .                .          .      .
+   9   exploit/[45mlinux[0m/telnet/netgear_telnetenable              2009-10-30       [32mexcellent[0m  Yes    NETGEAR TelnetEnable
+   10    \_ target: Automatic (detect TCP or UDP)             .                .          .      .
+   11    \_ target: TCP (typically older devices)             .                .          .      .
+   12    \_ target: UDP (typically newer devices)             .                .          .      .
+
+
+Interact with a module by name or index. For example [32minfo 12[0m, [32muse 12[0m or [32muse exploit/linux/telnet/netgear_telnetenable[0m
+After interacting with a module you can manually set a TARGET with [32mset TARGET 'UDP (typically newer devices)'[0m
+
+[0m
+
+=== Search: Postfix smtpd
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: ISC BIND 9.4.2
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: Apache httpd 2.2.8 ((Ubuntu) DAV/2)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: 2 (RPC #100000)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: netkit-rsh rexecd
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: OpenBSD or Solaris rlogind
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: Netkit rshd
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: GNU Classpath grmiregistry
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: Metasploitable root shell
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: 2-4 (RPC #100003)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: ProFTPD 1.3.1
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: MySQL 5.0.51a-3ubuntu5
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: distccd v1 ((GNU) 4.2.4 (Ubuntu 4.2.4-1ubuntu4))
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: PostgreSQL DB 8.3.0 - 8.3.7
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: VNC (protocol 3.3)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: (access denied)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: UnrealIRCd
+[0m
+Matching Modules
+================
+
+   #  Full Name                                   Disclosure Date  Rank       Check  Name
+   -  ---------                                   ---------------  ----       -----  ----
+   0  exploit/unix/irc/unreal_ircd_3281_backdoor  2010-06-12       [32mexcellent[0m  Yes    [45mUnrealIRCD[0m 3.2.8.1 Backdoor Command Execution
+
+
+Interact with a module by name or index. For example [32minfo 0[0m, [32muse 0[0m or [32muse exploit/unix/irc/unreal_ircd_3281_backdoor[0m
+
+[0m
+
+=== Search: UnrealIRCd (Admin email admin@Metasploitable.LAN)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: Apache Jserv (Protocol v1.3)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: Apache Tomcat/Coyote JSP engine 1.1
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: Ruby DRb RMI (Ruby 1.8; path /usr/lib/ruby/1.8/drb)
+[0m[1m[31m[-][0m No results from search
+[0m[1m[31m[-][0m Unknown command: path. Run the [32mhelp[0m command for more details.
+[0m
+
+=== Search: 1 (RPC #100024)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: 1-3 (RPC #100005)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: 1-4 (RPC #100021)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: vsftpd 2.3.4
+[0m
+Matching Modules
+================
+
+   #  Full Name                             Disclosure Date  Rank       Check  Name
+   -  ---------                             ---------------  ----       -----  ----
+   0  exploit/unix/ftp/[45mvsftpd[0m_234_backdoor  2011-07-03       [32mexcellent[0m  Yes    [45mVSFTPD[0m [45m2.3.4[0m Backdoor Command Execution
+
+
+Interact with a module by name or index. For example [32minfo 0[0m, [32muse 0[0m or [32muse exploit/unix/ftp/vsftpd_234_backdoor[0m
+
+[0m
+
+=== Search: OpenSSH 4.7p1 Debian 8ubuntu1 (protocol 2.0)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: Linux telnetd
+[0m
+Matching Modules
+================
+
+   #   Full Name                                              Disclosure Date  Rank       Check  Name
+   -   ---------                                              ---------------  ----       -----  ----
+   0   exploit/[45mlinux[0m/http/asuswrt_lan_rce                     2018-01-22       [32mexcellent[0m  No     AsusWRT LAN Unauthenticated Remote Code Execution
+   1   exploit/[45mlinux[0m/http/dlink_diagnostic_exec_noauth        2013-03-05       [32mexcellent[0m  No     D-Link DIR-645 / DIR-815 diagnostic.php Command Execution
+   2     \_ target: CMD                                       .                .          .      .
+   3     \_ target: [45mLinux[0m mipsel Payload                      .                .          .      .
+   4   exploit/[45mlinux[0m/telnet/gnu_inetutils_auth_bypass         2026-01-26       [32mgreat[0m      No     GNU Inetutils Telnet Authentication Bypass Exploit CVE-2026-24061
+   5   exploit/[45mlinux[0m/misc/hp_jetdirect_path_traversal         2017-04-05       normal     No     HP Jetdirect Path Traversal Arbitrary Code Execution
+   6   exploit/[45mlinux[0m/telnet/telnet_encrypt_keyid              2011-12-23       [32mgreat[0m      No     [45mLinux[0m BSD-derived Telnet Service Encryption Key ID Buffer Overflow
+   7     \_ target: Automatic                                 .                .          .      .
+   8     \_ target: Red Hat Enterprise [45mLinux[0m 3 (krb5-telnet)  .                .          .      .
+   9   exploit/[45mlinux[0m/telnet/netgear_telnetenable              2009-10-30       [32mexcellent[0m  Yes    NETGEAR TelnetEnable
+   10    \_ target: Automatic (detect TCP or UDP)             .                .          .      .
+   11    \_ target: TCP (typically older devices)             .                .          .      .
+   12    \_ target: UDP (typically newer devices)             .                .          .      .
+
+
+Interact with a module by name or index. For example [32minfo 12[0m, [32muse 12[0m or [32muse exploit/linux/telnet/netgear_telnetenable[0m
+After interacting with a module you can manually set a TARGET with [32mset TARGET 'UDP (typically newer devices)'[0m
+
+[0m
+
+=== Search: Postfix smtpd
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: ISC BIND 9.4.2
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: Apache httpd 2.2.8 ((Ubuntu) DAV/2)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: 2 (RPC #100000)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: netkit-rsh rexecd
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: OpenBSD or Solaris rlogind
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: Netkit rshd
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: GNU Classpath grmiregistry
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: Metasploitable root shell
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: 2-4 (RPC #100003)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: ProFTPD 1.3.1
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: MySQL 5.0.51a-3ubuntu5
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: distccd v1 ((GNU) 4.2.4 (Ubuntu 4.2.4-1ubuntu4))
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: PostgreSQL DB 8.3.0 - 8.3.7
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: VNC (protocol 3.3)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: (access denied)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: UnrealIRCd
+[0m
+Matching Modules
+================
+
+   #  Full Name                                   Disclosure Date  Rank       Check  Name
+   -  ---------                                   ---------------  ----       -----  ----
+   0  exploit/unix/irc/unreal_ircd_3281_backdoor  2010-06-12       [32mexcellent[0m  Yes    [45mUnrealIRCD[0m 3.2.8.1 Backdoor Command Execution
+
+
+Interact with a module by name or index. For example [32minfo 0[0m, [32muse 0[0m or [32muse exploit/unix/irc/unreal_ircd_3281_backdoor[0m
+
+[0m
+
+=== Search: UnrealIRCd (Admin email admin@Metasploitable.LAN)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: Apache Jserv (Protocol v1.3)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: Apache Tomcat/Coyote JSP engine 1.1
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: Ruby DRb RMI (Ruby 1.8; path /usr/lib/ruby/1.8/drb)
+[0m[1m[31m[-][0m No results from search
+[0m[1m[31m[-][0m Unknown command: path. Run the [32mhelp[0m command for more details.
+[0m
+
+=== Search: 1 (RPC #100024)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: 1-3 (RPC #100005)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: 1-4 (RPC #100021)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: vsftpd 2.3.4
+[0m
+Matching Modules
+================
+
+   #  Full Name                             Disclosure Date  Rank       Check  Name
+   -  ---------                             ---------------  ----       -----  ----
+   0  exploit/unix/ftp/[45mvsftpd[0m_234_backdoor  2011-07-03       [32mexcellent[0m  Yes    [45mVSFTPD[0m [45m2.3.4[0m Backdoor Command Execution
+
+
+Interact with a module by name or index. For example [32minfo 0[0m, [32muse 0[0m or [32muse exploit/unix/ftp/vsftpd_234_backdoor[0m
+
+[0m
+
+=== Search: OpenSSH 4.7p1 Debian 8ubuntu1 (protocol 2.0)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: Linux telnetd
+[0m
+Matching Modules
+================
+
+   #   Full Name                                              Disclosure Date  Rank       Check  Name
+   -   ---------                                              ---------------  ----       -----  ----
+   0   exploit/[45mlinux[0m/http/asuswrt_lan_rce                     2018-01-22       [32mexcellent[0m  No     AsusWRT LAN Unauthenticated Remote Code Execution
+   1   exploit/[45mlinux[0m/http/dlink_diagnostic_exec_noauth        2013-03-05       [32mexcellent[0m  No     D-Link DIR-645 / DIR-815 diagnostic.php Command Execution
+   2     \_ target: CMD                                       .                .          .      .
+   3     \_ target: [45mLinux[0m mipsel Payload                      .                .          .      .
+   4   exploit/[45mlinux[0m/telnet/gnu_inetutils_auth_bypass         2026-01-26       [32mgreat[0m      No     GNU Inetutils Telnet Authentication Bypass Exploit CVE-2026-24061
+   5   exploit/[45mlinux[0m/misc/hp_jetdirect_path_traversal         2017-04-05       normal     No     HP Jetdirect Path Traversal Arbitrary Code Execution
+   6   exploit/[45mlinux[0m/telnet/telnet_encrypt_keyid              2011-12-23       [32mgreat[0m      No     [45mLinux[0m BSD-derived Telnet Service Encryption Key ID Buffer Overflow
+   7     \_ target: Automatic                                 .                .          .      .
+   8     \_ target: Red Hat Enterprise [45mLinux[0m 3 (krb5-telnet)  .                .          .      .
+   9   exploit/[45mlinux[0m/telnet/netgear_telnetenable              2009-10-30       [32mexcellent[0m  Yes    NETGEAR TelnetEnable
+   10    \_ target: Automatic (detect TCP or UDP)             .                .          .      .
+   11    \_ target: TCP (typically older devices)             .                .          .      .
+   12    \_ target: UDP (typically newer devices)             .                .          .      .
+
+
+Interact with a module by name or index. For example [32minfo 12[0m, [32muse 12[0m or [32muse exploit/linux/telnet/netgear_telnetenable[0m
+After interacting with a module you can manually set a TARGET with [32mset TARGET 'UDP (typically newer devices)'[0m
+
+[0m
+
+=== Search: Postfix smtpd
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: ISC BIND 9.4.2
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: Apache httpd 2.2.8 ((Ubuntu) DAV/2)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: 2 (RPC #100000)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: netkit-rsh rexecd
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: login
+[0m
+Matching Modules
+================
+
+   #    Full Name                                                                                  Disclosure Date  Rank       Check  Name
+   -    ---------                                                                                  ---------------  ----       -----  ----
+   0    exploit/windows/misc/ais_esel_server_rce                                                   2019-03-27       [32mexcellent[0m  Yes    AIS logistics ESEL-Server Unauth SQL Injection RCE
+   1    auxiliary/scanner/amqp/amqp_[45mlogin[0m                                                          .                normal     No     AMQP 0-9-1 [45mLogin[0m Check Scanner
+   2    exploit/linux/http/atutor_filemanager_traversal                                            2016-03-01       [32mexcellent[0m  Yes    ATutor 2.2.1 Directory Traversal / Remote Code Execution
+   3    exploit/windows/persistence/accessibility_features_debugger                                1995-04-24       [32mexcellent[0m  Yes    Accessibility Features (Sticky Keys) Persistence via Debugger Registry Key
+   4    payload/cmd/unix/adduser                                                                   .                normal     No     Add user with useradd
+   5    exploit/multi/http/coldfusion_rds_auth_bypass                                              2013-08-08       [32mgreat[0m      Yes    Adobe ColdFusion RDS Authentication Bypass
+   6      \_ target: Windows                                                                       .                .          .      .
+   7      \_ target: Linux                                                                         .                .          .      .
+   8    auxiliary/scanner/http/advantech_webaccess_[45mlogin[0m                                           .                normal     No     Advantech WebAccess [45mLogin[0m
+   9    exploit/linux/http/airties_[45mlogin[0m_cgi_bof                                                   2015-03-31       normal     Yes    Airties [45mlogin[0m-cgi Buffer Overflow
+   10   exploit/linux/http/alienvault_exec                                                         2017-01-31       [32mexcellent[0m  Yes    AlienVault OSSIM/USM Remote Code Execution
+   11   auxiliary/scanner/http/axis_[45mlogin[0m                                                          .                normal     No     Apache Axis2 Brute Force Utility
+   12   exploit/multi/http/apache_druid_cve_2023_25194                                             2023-02-07       [32mexcellent[0m  Yes    Apache Druid JNDI Injection RCE
+   13     \_ target: Automatic                                                                     .                .          .      .
+   14     \_ target: Windows                                                                       .                .          .      .
+   15     \_ target: Linux                                                                         .                .          .      .
+   16   auxiliary/scanner/ssh/apache_karaf_command_execution                                       2016-02-09       normal     No     Apache Karaf Default Credentials Command Execution
+   17   auxiliary/scanner/ssh/karaf_[45mlogin[0m                                                          .                normal     No     Apache Karaf [45mLogin[0m Utility
+   18   auxiliary/scanner/http/apache_nifi_[45mlogin[0m                                                   .                normal     No     Apache NiFi [45mLogin[0m Scanner
+   19   auxiliary/gather/apache_superset_cookie_sig_priv_esc                                       2023-04-25       normal     Yes    Apache Superset Signed Cookie Priv Esc
+   20   exploit/linux/http/apache_superset_cookie_sig_rce                                          2023-09-06       good       Yes    Apache Superset Signed Cookie RCE
+   21   auxiliary/scanner/acpp/[45mlogin[0m                                                               .                normal     No     Apple Airport ACPP Authentication Scanner
+   22   auxiliary/scanner/afp/afp_[45mlogin[0m                                                            .                normal     No     Apple Filing Protocol [45mLogin[0m Utility
+   23   auxiliary/admin/appletv/appletv_display_image                                              .                normal     No     Apple TV Image Remote Control
+   24   auxiliary/admin/appletv/appletv_display_video                                              .                normal     No     Apple TV Video Remote Control
+   25   exploit/osx/afp/[45mlogin[0mext                                                                   2004-05-03       average    No     AppleFileServer [45mLogin[0mExt PathName Overflow
+   26   auxiliary/scanner/http/appletv_[45mlogin[0m                                                       .                normal     No     AppleTV AirPlay [45mLogin[0m Utility
+   27   auxiliary/gather/tplink_archer_c7_traversal                                                2015-04-08       normal     Yes    Archer C7 Directory Traversal Vulnerability
+   28   exploit/unix/ssh/array_vxag_vapv_privkey_privesc                                           2014-02-03       [32mexcellent[0m  No     Array Networks vAPV and vxAG Private Key Privilege Escalation Code Execution
+   29   auxiliary/admin/http/arris_motorola_surfboard_backdoor_xss                                 2015-04-08       normal     No     Arris / Motorola Surfboard SBG6580 Web Interface Takeover
+   30   auxiliary/voip/asterisk_[45mlogin[0m                                                              .                normal     No     Asterisk Manager [45mLogin[0m Utility
+   31   exploit/multi/http/jira_plugin_upload                                                      2018-02-22       [32mexcellent[0m  Yes    Atlassian Jira Authenticated Upload Code Execution
+   32   auxiliary/server/capture/mssql                                                             .                normal     No     Authentication Capture: MSSQL
+   33   auxiliary/scanner/http/bavision_cam_[45mlogin[0m                                                  .                normal     No     BAVision IP Camera Web Server [45mLogin[0m
+   34   exploit/linux/http/belkin_[45mlogin[0m_bof                                                        2014-05-09       normal     Yes    Belkin Play N750 [45mlogin[0m.cgi Buffer Overflow
+   35   auxiliary/scanner/http/binom3_[45mlogin[0m_config_pass_dump                                       .                normal     No     Binom3 Web Management [45mLogin[0m Scanner, Config and Password File Dump
+   36   auxiliary/scanner/telnet/brocade_enable_[45mlogin[0m                                              .                normal     No     Brocade Enable [45mLogin[0m Check Scanner
+   37   auxiliary/scanner/http/buffalo_[45mlogin[0m                                                       .                normal     No     Buffalo NAS [45mLogin[0m Utility
+   38   exploit/windows/brightstor/lgserver_rxr[45mlogin[0m                                               2007-06-06       average    Yes    CA BrightStor ARCserve for Laptops and Desktops LGServer Buffer Overflow
+   39     \_ target: Windows 2003 SP0 English                                                      .                .          .      .
+   40     \_ target: Windows 2000 SP4 English                                                      .                .          .      .
+   41   auxiliary/scanner/misc/cctv_dvr_[45mlogin[0m                                                      .                normal     No     CCTV DVR [45mLogin[0m Scanning Utility
+   42   exploit/linux/http/control_web_panel_[45mlogin[0m_cmd_exec                                        2023-01-05       [32mexcellent[0m  Yes    CWP [45mlogin[0m.php Unauthenticated RCE
+   43     \_ target: Unix Command                                                                  .                .          .      .
+   44     \_ target: Linux Dropper                                                                 .                .          .      .
+   45   auxiliary/scanner/http/cnpilot_r_web_[45mlogin[0m_loot                                            .                normal     No     Cambium cnPilot r200/r201 [45mLogin[0m Scanner and Config Dump
+   46   auxiliary/scanner/http/epmp1000_get_chart_cmd_exec                                         .                normal     No     Cambium ePMP 1000 'get_chart' Command Injection (v3.1-3.5-RC7)
+   47   auxiliary/scanner/http/epmp1000_ping_cmd_exec                                              .                normal     No     Cambium ePMP 1000 'ping' Command Injection (up to v2.5)
+   48   auxiliary/scanner/http/epmp1000_dump_hashes                                                .                normal     No     Cambium ePMP 1000 'ping' Password Hash Extractor (up to v2.5)
+   49   auxiliary/scanner/http/epmp1000_reset_pass                                                 .                normal     No     Cambium ePMP 1000 Account Password Reset
+   50   auxiliary/scanner/http/epmp1000_dump_config                                                .                normal     No     Cambium ePMP 1000 Dump Device Config
+   51   auxiliary/scanner/http/epmp1000_web_[45mlogin[0m                                                  .                normal     No     Cambium ePMP 1000 [45mLogin[0m Scanner
+   52   exploit/unix/http/epmp1000_get_chart_cmd_shell                                             2017-12-18       [32mexcellent[0m  Yes    Cambium ePMP1000 'get_chart' Shell via Command Injection (v3.1-3.5-RC7)
+   53   exploit/unix/http/epmp1000_ping_cmd_shell                                                  2015-11-28       [32mexcellent[0m  Yes    Cambium ePMP1000 'ping' Shell via Command Injection (up to v2.5)
+   54   auxiliary/scanner/http/gavazzi_em_[45mlogin[0m_loot                                               .                normal     No     Carlo Gavazzi Energy Meters - [45mLogin[0m Brute Force, Extract Info and Dump Plant Database
+   55   exploit/linux/http/centreon_sqli_exec                                                      2014-10-15       [32mexcellent[0m  Yes    Centreon SQL and Command Injection
+   56   exploit/linux/http/centreon_useralias_exec                                                 2016-02-26       [32mexcellent[0m  Yes    Centreon Web Useralias Command Execution
+   57   auxiliary/scanner/ssh/cerberus_sftp_enumusers                                              2014-05-27       normal     No     Cerberus FTP Server SFTP Username Enumeration
+   58   auxiliary/scanner/http/chef_webui_[45mlogin[0m                                                    .                normal     No     Chef Web UI Brute Force Utility
+   59   auxiliary/scanner/http/caidao_bruteforce_[45mlogin[0m                                             .                normal     No     Chinese Caidao Backdoor Bruteforce
+   60   auxiliary/scanner/http/cisco_asa_asdm_bruteforce                                           .                normal     No     Cisco ASA ASDM Brute-force [45mLogin[0m
+   61   auxiliary/admin/networking/cisco_asa_extrabacon                                            .                normal     Yes    Cisco ASA Authentication Bypass (EXTRABACON)
+   62     \_ action: PASS_DISABLE                                                                  .                .          .      Disable password authentication.
+   63     \_ action: PASS_ENABLE                                                                   .                .          .      Enable password authentication.
+   64   auxiliary/scanner/http/cisco_asa_clientless_vpn                                            .                normal     No     Cisco ASA Clientless SSL VPN (WebVPN) Brute-force [45mLogin[0m Utility
+   65   auxiliary/admin/networking/cisco_dcnm_auth_bypass                                          2020-06-01       normal     Yes    Cisco DCNM auth bypass
+   66   auxiliary/scanner/http/cisco_firepower_[45mlogin[0m                                               .                normal     No     Cisco Firepower Management Console 6.0 [45mLogin[0m
+   67   auxiliary/scanner/http/cisco_ironport_enum                                                 .                normal     No     Cisco Ironport Bruteforce [45mLogin[0m Utility
+   68   auxiliary/scanner/http/cisco_ssl_vpn                                                       .                normal     No     Cisco SSL VPN Bruteforce [45mLogin[0m Utility
+   69   exploit/linux/ssh/cisco_ucs_scpuser                                                        2019-08-21       [32mexcellent[0m  No     Cisco UCS Director default scpuser password
+   70   exploit/multi/http/clinic_pms_sqli_to_rce                                                  2025-01-04       [32mexcellent[0m  Yes    Clinic's Patient Management System 1.0 - Unauthenticated RCE
+   71   auxiliary/scanner/couchdb/couchdb_[45mlogin[0m                                                    .                normal     No     CouchDB [45mLogin[0m Utility
+   72   exploit/linux/http/crypttech_cryptolog_[45mlogin[0m_exec                                          2017-05-03       [32mexcellent[0m  Yes    Crypttech CryptoLog Remote Code Execution
+   73   exploit/windows/http/cyclope_ess_sqli                                                      2012-08-08       [32mexcellent[0m  Yes    Cyclope Employee Surveillance Solution v6 SQL Injection
+   74   auxiliary/scanner/http/dlink_dir_300_615_http_[45mlogin[0m                                        .                normal     No     D-Link DIR-300A / DIR-320 / DIR-615D HTTP [45mLogin[0m Utility
+   75   auxiliary/scanner/http/dlink_dir_session_cgi_http_[45mlogin[0m                                    .                normal     No     D-Link DIR-300B / DIR-600B / DIR-815 / DIR-645 HTTP [45mLogin[0m Utility
+   76   auxiliary/scanner/http/dlink_dir_615h_http_[45mlogin[0m                                           .                normal     No     D-Link DIR-615H HTTP [45mLogin[0m Utility
+   77   exploit/linux/upnp/dlink_upnp_msearch_exec                                                 2013-02-01       [32mexcellent[0m  Yes    D-Link Unauthenticated Remote Command Execution using UPnP via a special crafted M-SEARCH packet.
+   78     \_ target: Unix Command                                                                  .                .          .      .
+   79     \_ target: Linux Dropper                                                                 .                .          .      .
+   80   auxiliary/scanner/http/dell_idrac                                                          .                normal     No     Dell iDRAC Default [45mLogin[0m
+   81   auxiliary/scanner/http/directadmin_[45mlogin[0m                                                   .                normal     No     DirectAdmin Web Control Panel [45mLogin[0m Utility
+   82   exploit/windows/http/disk_pulse_enterprise_bof                                             2016-10-03       [32mexcellent[0m  Yes    Disk Pulse Enterprise [45mLogin[0m Buffer Overflow
+   83   exploit/linux/http/dlink_hnap_[45mlogin[0m_bof                                                    2016-11-07       [32mexcellent[0m  Yes    Dlink DIR Routers Unauthenticated HNAP [45mLogin[0m Stack Buffer Overflow
+   84     \_ target: Dlink DIR-818 / 822 / 823 / 850 [MIPS]                                        .                .          .      .
+   85     \_ target: Dlink DIR-868 (rev. B and C) / 880 / 885 / 890 / 895 [ARM]                    .                .          .      .
+   86   exploit/windows/local/docker_credential_wincred                                            2019-07-05       manual     Yes    Docker-Credential-Wincred.exe Privilege Escalation
+   87   auxiliary/scanner/http/dolibarr_[45mlogin[0m                                                      .                normal     No     Dolibarr ERP/CRM [45mLogin[0m Utility
+   88   exploit/windows/http/dup_scout_enterprise_[45mlogin[0m_bof                                        2017-11-14       [32mgreat[0m      Yes    Dup Scout Enterprise [45mLogin[0m Buffer Overflow
+   89     \_ target: Automatic                                                                     .                .          .      .
+   90     \_ target: Dup Scout Enterprise 9.9.14 (x86)                                             .                .          .      .
+   91     \_ target: Dup Scout Enterprise 10.0.18 (x86)                                            .                .          .      .
+   92   auxiliary/scanner/http/etherpad_duo_[45mlogin[0m                                                  .                normal     No     EtherPAD Duo [45mLogin[0m Bruteforce Utility
+   93   exploit/linux/http/f5_icontrol_soap_csrf_rce_cve_2022_41622                                2022-11-16       [32mexcellent[0m  No     F5 BIG-IP iControl CSRF File Write SOAP API
+   94     \_ target: Restart                                                                       .                .          .      .
+   95     \_ target: [45mLogin[0m                                                                         .                .          .      .
+   96     \_ target: Custom                                                                        .                .          .      .
+   97   exploit/linux/http/f5_icontrol_rest_ssrf_rce                                               2021-03-10       [32mexcellent[0m  Yes    F5 iControl REST Unauthenticated SSRF Token Generation RCE
+   98     \_ target: Unix Command                                                                  .                .          .      .
+   99     \_ target: Linux Dropper                                                                 .                .          .      .
+   100  auxiliary/scanner/ftp/ftp_[45mlogin[0m                                                            .                normal     Yes    FTP Authentication Scanner
+   101  exploit/windows/http/flexdotnetcms_upload_exec                                             2020-09-28       [32mexcellent[0m  Yes    FlexDotnetCMS Arbitrary ASP File Upload
+   102    \_ target: Windows (x86)                                                                 .                .          .      .
+   103    \_ target: Windows (x64)                                                                 .                .          .      .
+   104  auxiliary/scanner/http/fortimail_[45mlogin[0m_bypass_detection                                    .                normal     No     FortiMail Unauthenticated [45mLogin[0m Bypass Scanner
+   105  exploit/linux/http/fortinet_authentication_bypass_cve_2022_40684                           2022-10-10       [32mexcellent[0m  Yes    Fortinet FortiOS, FortiProxy, and FortiSwitchManager authentication bypass.
+   106  auxiliary/scanner/http/fortinet_ssl_vpn                                                    .                normal     No     Fortinet SSL VPN Bruteforce [45mLogin[0m Utility
+   107  exploit/windows/ftp/freefloatftp_wbem                                                      2012-12-07       [32mexcellent[0m  Yes    FreeFloat FTP Server Arbitrary File Upload
+   108  auxiliary/scanner/misc/freeswitch_event_socket_[45mlogin[0m                                       .                normal     Yes    FreeSWITCH Event Socket [45mLogin[0m
+   109  auxiliary/scanner/http/frontpage_[45mlogin[0m                                                     .                normal     No     FrontPage Server Extensions Anonymous [45mLogin[0m Scanner
+   110  exploit/linux/telnet/gnu_inetutils_auth_bypass                                             2026-01-26       [32mgreat[0m      No     GNU Inetutils Telnet Authentication Bypass Exploit CVE-2026-24061
+   111  auxiliary/scanner/http/gitlab_[45mlogin[0m                                                        .                normal     No     GitLab [45mLogin[0m Utility
+   112  auxiliary/scanner/http/glassfish_[45mlogin[0m                                                     .                normal     No     GlassFish Brute Force Utility
+   113  exploit/linux/http/goautodial_3_rce_command_injection                                      2015-04-21       [32mexcellent[0m  Yes    GoAutoDial 3.3 Authentication Bypass / Command Injection
+   114  auxiliary/dos/windows/ftp/guildftp_cwdlist                                                 2008-10-12       normal     No     Guild FTPd 0.999.8.11/0.999.14 Heap Corruption
+   115  exploit/windows/misc/hp_dataprotector_dtbcls[45mlogin[0m                                          2010-09-09       normal     Yes    HP Data Protector DtbCls[45mLogin[0m Buffer Overflow
+   116  exploit/linux/misc/hp_vsa_[45mlogin[0m_bof                                                        2013-06-28       normal     Yes    HP StorageWorks P4000 Virtual SAN Appliance [45mLogin[0m Buffer Overflow
+   117  auxiliary/scanner/http/hp_sys_mgmt_[45mlogin[0m                                                   .                normal     No     HP System Management Homepage [45mLogin[0m Utility
+   118  exploit/linux/http/hp_van_sdn_cmd_inject                                                   2018-06-25       [32mexcellent[0m  Yes    HP VAN SDN Controller Root Command Injection
+   119    \_ target: Unix In-Memory                                                                .                .          .      .
+   120    \_ target: Linux Dropper                                                                 .                .          .      .
+   121  auxiliary/scanner/http/http_[45mlogin[0m                                                          .                normal     No     HTTP [45mLogin[0m Utility
+   122  auxiliary/scanner/http/http_sickrage_password_leak                                         2018-03-08       normal     No     HTTP SickRage Password Leak
+   123  exploit/linux/http/pineapple_bypass_cmdinject                                              2015-08-01       [32mexcellent[0m  Yes    Hak5 WiFi Pineapple Preconfiguration Command Injection
+   124  exploit/windows/http/hp_power_manager_[45mlogin[0m                                                2009-11-04       average    No     Hewlett-Packard Power Manager Administration Buffer Overflow
+   125  exploit/linux/http/huawei_hg532n_cmdinject                                                 2017-04-15       [32mexcellent[0m  Yes    Huawei HG532n Command Injection
+   126  auxiliary/scanner/misc/ibm_mq_[45mlogin[0m                                                        .                normal     No     IBM WebSphere MQ [45mLogin[0m Check
+   127  auxiliary/scanner/http/ipboard_[45mlogin[0m                                                       .                normal     No     IP Board [45mLogin[0m Auxiliary Module
+   128  auxiliary/scanner/http/icinga_static_library_file_directory_traversal                      2022-05-09       normal     Yes    Icingaweb Directory Traversal in Static Library File Requests
+   129  auxiliary/scanner/http/buildmaster_[45mlogin[0m                                                   .                normal     No     Inedo BuildMaster [45mLogin[0m Scanner
+   130  auxiliary/scanner/http/infovista_enum                                                      .                normal     No     InfoVista VistaPortal Application Bruteforce [45mLogin[0m Utility
+   131  auxiliary/scanner/ivanti/ivanti_[45mlogin[0m                                                      .                normal     No     Ivanti Connect Secure HTTP Scanner
+   132  auxiliary/gather/jasmin_ransomware_sqli                                                    2023-04-08       normal     Yes    Jasmin Ransomware Web Server Unauthenticated SQL Injection
+   133  auxiliary/scanner/http/jenkins_[45mlogin[0m                                                       .                normal     No     Jenkins-CI [45mLogin[0m Utility
+   134  auxiliary/scanner/teamcity/teamcity_[45mlogin[0m                                                  .                normal     No     JetBrains TeamCity [45mLogin[0m Scanner
+   135  auxiliary/scanner/http/joomla_bruteforce_[45mlogin[0m                                             .                normal     No     Joomla Bruteforce [45mLogin[0m Utility
+   136  exploit/unix/webapp/joomla_contenthistory_sqli_rce                                         2015-10-23       [32mexcellent[0m  Yes    Joomla Content History SQLi Remote Code Execution
+   137  exploit/freebsd/http/junos_phprc_auto_prepend_file                                         2023-08-17       [32mexcellent[0m  Yes    Junos OS PHPRC Environment Variable Manipulation RCE
+   138    \_ target: PHP In-Memory                                                                 .                .          .      .
+   139    \_ target: Interactive SSH with jail break                                               .                .          .      .
+   140  auxiliary/scanner/http/jupyter_[45mlogin[0m                                                       .                normal     No     Jupyter [45mLogin[0m Utility
+   141  exploit/windows/ftp/sami_ftpd_user                                                         2006-01-24       normal     Yes    KarjaSoft Sami FTP Server v2.0.2 USER Overflow
+   142  auxiliary/scanner/kerberos/kerberos_[45mlogin[0m                                                  .                normal     No     Kerberos Authentication Check Scanner
+   143  auxiliary/scanner/scada/koyo_[45mlogin[0m                                                         2012-01-19       normal     No     Koyo DirectLogic PLC Password Brute Force Utility
+   144  auxiliary/scanner/ldap/ldap_[45mlogin[0m                                                          .                normal     No     LDAP [45mLogin[0m Scanner
+   145  post/multi/gather/lastpass_creds                                                           .                normal     No     LastPass Vault Decryptor
+   146  auxiliary/scanner/http/linksys_e1500_traversal                                             .                normal     No     Linksys E1500 Directory Traversal Vulnerability
+   147  exploit/linux/persistence/wsl/startup_folder                                               2016-08-02       [32mexcellent[0m  Yes    Linux WSL via Startup Folder Persistence
+   148  exploit/linux/local/su_[45mlogin[0m                                                               1971-11-03       normal     Yes    [45mLogin[0m to Another User with Su on Linux / Unix Systems
+   149    \_ target: Linux x86                                                                     .                .          .      .
+   150    \_ target: Linux x86_64                                                                  .                .          .      .
+   151  auxiliary/scanner/lotus/lotus_domino_[45mlogin[0m                                                 .                normal     No     Lotus Domino Brute Force Utility
+   152  exploit/windows/smb/ms04_007_killbill                                                      2004-02-10       low        No     MS04-007 Microsoft ASN.1 Library Bitstring Heap Overflow
+   153  exploit/windows/smb/smb_relay                                                              2001-03-31       [32mexcellent[0m  Yes    MS08-068 Microsoft Windows SMB Relay Code Execution
+   154    \_ action: CREATE_SMB_SESSION                                                            .                .          .      Do not close the SMB connection after relaying, and instead create an SMB session
+   155    \_ action: PSEXEC                                                                        .                .          .      Use the SMB Connection to run the exploit/windows/psexec module against the relay target
+   156    \_ target: Automatic                                                                     .                .          .      .
+   157    \_ target: PowerShell                                                                    .                .          .      .
+   158    \_ target: Native upload                                                                 .                .          .      .
+   159    \_ target: MOF upload                                                                    .                .          .      .
+   160    \_ target: Command                                                                       .                .          .      .
+   161  exploit/windows/smb/ms17_010_eternalblue                                                   2017-03-14       average    Yes    MS17-010 EternalBlue SMB Remote Windows Kernel Pool Corruption
+   162    \_ target: Automatic Target                                                              .                .          .      .
+   163    \_ target: Windows 7                                                                     .                .          .      .
+   164    \_ target: Windows Embedded Standard 7                                                   .                .          .      .
+   165    \_ target: Windows Server 2008 R2                                                        .                .          .      .
+   166    \_ target: Windows 8                                                                     .                .          .      .
+   167    \_ target: Windows 8.1                                                                   .                .          .      .
+   168    \_ target: Windows Server 2012                                                           .                .          .      .
+   169    \_ target: Windows 10 Pro                                                                .                .          .      .
+   170    \_ target: Windows 10 Enterprise Evaluation                                              .                .          .      .
+   171  auxiliary/scanner/mssql/mssql_[45mlogin[0m                                                        .                normal     No     MSSQL [45mLogin[0m Utility
+   172  auxiliary/scanner/mssql/mssql_version                                                      .                normal     No     MSSQL Version Utility
+   173  exploit/osx/persistence/launch_plist                                                       2012-04-01       [32mexcellent[0m  Yes    Mac OS X Persistent Payload Installer
+   174    \_ target: Mac OS X x64 (Native Payload)                                                 .                .          .      .
+   175    \_ target: Mac OS X x86 (Native Payload for 10.14 and earlier)                           .                .          .      .
+   176    \_ target: Mac OS X Apple Sillicon                                                       .                .          .      .
+   177    \_ target: Python payload                                                                .                .          .      .
+   178    \_ target: Command payload                                                               .                .          .      .
+   179  exploit/osx/local/root_no_password                                                         2017-11-29       [32mexcellent[0m  No     Mac OS X Root Privilege Escalation
+   180  exploit/windows/imap/mailenable_[45mlogin[0m                                                      2006-12-11       [32mgreat[0m      No     MailEnable IMAPD (2.34/2.35) [45mLogin[0m Request Buffer Overflow
+   181    \_ target: MailEnable 2.35 Pro                                                           .                .          .      .
+   182    \_ target: MailEnable 2.34 Pro                                                           .                .          .      .
+   183  exploit/windows/fileformat/windows_registration_entries                                    1995-08-24       [32mgreat[0m      No     Malicious Windows Registration Entries (.reg) File
+   184  exploit/windows/http/manageengine_adaudit_plus_authenticated_rce                           2021-10-01       [32mexcellent[0m  Yes    ManageEngine ADAudit Plus Authenticated File Write RCE
+   185  auxiliary/scanner/http/manageengine_desktop_central_[45mlogin[0m                                  .                normal     No     ManageEngine Desktop Central [45mLogin[0m Utility
+   186  auxiliary/admin/http/manageengine_dir_listing                                              2015-01-28       normal     No     ManageEngine Multiple Products Arbitrary Directory Listing
+   187  auxiliary/admin/http/manageengine_file_download                                            2015-01-28       normal     No     ManageEngine Multiple Products Arbitrary File Download
+   188  exploit/multi/http/manageengine_auth_upload                                                2014-12-15       [32mexcellent[0m  Yes    ManageEngine Multiple Products Authenticated File Upload
+   189    \_ target: Automatic                                                                     .                .          .      .
+   190    \_ target: ServiceDesk Plus v5-v7.1 < b7016/AssetExplorer v4/SupportCenter v5-v7.9       .                .          .      .
+   191    \_ target: ServiceDesk Plus/Plus MSP v7.1 >= b7016 - v9.0 < b9031/AssetExplorer v5-v6.1  .                .          .      .
+   192    \_ target: IT360 v8-v10.4                                                                .                .          .      .
+   193  exploit/windows/imap/mercur_[45mlogin[0m                                                          2006-03-17       average    No     Mercur Messaging 2005 IMAP [45mLogin[0m Buffer Overflow
+   194    \_ target: Windows 2000 Pro SP4 English                                                  .                .          .      .
+   195    \_ target: Windows XP Pro SP2 English                                                    .                .          .      .
+   196  exploit/windows/imap/mercury_[45mlogin[0m                                                         2007-03-06       normal     Yes    Mercury/32 4.01 IMAP [45mLOGIN[0m SEH Buffer Overflow
+   197  auxiliary/scanner/msf/msf_rpc_[45mlogin[0m                                                        .                normal     No     Metasploit RPC Interface [45mLogin[0m Utility
+   198  auxiliary/scanner/msf/msf_web_[45mlogin[0m                                                        .                normal     No     Metasploit Web Interface [45mLogin[0m Utility
+   199  exploit/multi/http/microfocus_obm_auth_rce                                                 2020-10-28       [32mexcellent[0m  Yes    Micro Focus Operations Bridge Manager Authenticated Remote Code Execution
+   200  exploit/linux/http/microfocus_obr_cmd_injection                                            2021-02-09       [32mexcellent[0m  Yes    Micro Focus Operations Bridge Reporter Unauthenticated Command Injection
+   201  exploit/linux/ssh/microfocus_obr_shrboadmin                                                2020-09-21       [32mexcellent[0m  No     Micro Focus Operations Bridge Reporter shrboadmin default password
+   202  exploit/multi/http/microfocus_ucmdb_unauth_deser                                           2020-10-28       [32mexcellent[0m  Yes    Micro Focus UCMDB Java Deserialization Unauthenticated Remote Code Execution
+   203    \_ target: Windows                                                                       .                .          .      .
+   204    \_ target: Linux                                                                         .                .          .      .
+   205  auxiliary/scanner/http/azure_ad_[45mlogin[0m                                                      .                normal     No     Microsoft Azure Active Directory [45mLogin[0m Enumeration
+   206  auxiliary/scanner/http/rdp_web_[45mlogin[0m                                                       2020-12-23       normal     No     Microsoft RDP Web Client [45mLogin[0m Enumeration
+   207  exploit/windows/mssql/mssql_linkcrawler                                                    2000-01-01       [32mgreat[0m      No     Microsoft SQL Server Database Link Crawling Command Execution
+   208  auxiliary/admin/mssql/mssql_enum_sql_[45mlogin[0ms                                                .                normal     No     Microsoft SQL Server SUSER_SNAME SQL [45mLogin[0ms Enumeration
+   209  exploit/windows/smb/smb_shadow                                                             2021-02-16       manual     No     Microsoft Windows SMB Direct Session Takeover
+   210  auxiliary/scanner/mongodb/mongodb_[45mlogin[0m                                                    .                normal     No     MongoDB [45mLogin[0m Utility
+   211  exploit/multi/http/moodle_teacher_enrollment_priv_esc_to_rce                               2020-07-20       good       Yes    Moodle Teacher Enrollment Privilege Escalation to RCE
+   212  auxiliary/admin/motorola/wr850g_cred                                                       2004-09-24       normal     No     Motorola WR850G v4.03 Credentials
+   213  auxiliary/scanner/mysql/mysql_[45mlogin[0m                                                        .                normal     No     MySQL [45mLogin[0m Utility
+   214  auxiliary/scanner/nntp/nntp_[45mlogin[0m                                                          .                normal     No     NNTP [45mLogin[0m Utility
+   215  auxiliary/scanner/nexpose/nexpose_api_[45mlogin[0m                                                .                normal     No     NeXpose API Interface [45mLogin[0m Utility
+   216  auxiliary/scanner/nessus/nessus_ntp_[45mlogin[0m                                                  .                normal     No     Nessus NTP [45mLogin[0m Utility
+   217  auxiliary/scanner/nessus/nessus_rest_[45mlogin[0m                                                 .                normal     No     Nessus RPC Interface [45mLogin[0m Utility
+   218  auxiliary/scanner/nessus/nessus_xmlrpc_[45mlogin[0m                                               .                normal     No     Nessus XMLRPC Interface [45mLogin[0m Utility
+   219  exploit/linux/http/netgear_dnslookup_cmd_exec                                              2017-02-25       [32mexcellent[0m  Yes    Netgear DGN2200 dnslookup.cgi Command Injection
+   220  auxiliary/admin/http/netgear_pnpx_getsharefolderlist_auth_bypass                           2021-09-06       normal     Yes    Netgear PNPX_GetShareFolderList Authentication Bypass
+   221  exploit/linux/http/netis_unauth_rce_cve_2024_22729                                         2024-01-11       [32mexcellent[0m  Yes    Netis router MW5360 unauthenticated RCE.
+   222  exploit/linux/http/netsweeper_webadmin_unix[45mlogin[0m                                           2020-04-28       [32mexcellent[0m  Yes    Netsweeper WebAdmin unix[45mlogin[0m.php Python Code Injection
+   223  auxiliary/scanner/http/nextjs_middleware_auth_bypass                                       2025-03-21       normal     Yes    Next.js Middleware Authorization Bypass Scanner
+   224  exploit/linux/misc/novell_edirectory_ncp_bof                                               2012-12-12       normal     Yes    Novell eDirectory 8 Buffer Overflow
+   225  exploit/windows/nuuo/nuuo_cms_sqli                                                         2018-10-11       normal     No     Nuuo Central Management Authenticated SQL Server SQLi
+   226  auxiliary/gather/nuuo_cms_file_download                                                    2018-10-11       normal     No     Nuuo Central Management Server Authenticated Arbitrary File Download
+   227  exploit/windows/nuuo/nuuo_cms_fu                                                           2018-10-11       manual     No     Nuuo Central Management Server Authenticated Arbitrary File Upload
+   228  auxiliary/scanner/misc/oki_scanner                                                         .                normal     No     OKI Printer Default [45mLogin[0m Credential Scanner
+   229  auxiliary/scanner/http/opnsense_[45mlogin[0m                                                      .                normal     No     OPNSense [45mLogin[0m Scanner
+   230  payload/php/unix/cmd/adduser                                                               .                normal     No     OS Command Exec, Add user with useradd
+   231  post/osx/gather/auto[45mlogin[0m_password                                                         .                normal     No     OSX Gather Auto[45mlogin[0m Password as Root
+   232  post/osx/gather/safari_lastsession                                                         .                normal     No     OSX Gather Safari LastSession.plist
+   233  auxiliary/scanner/http/owa_ews_[45mlogin[0m                                                       .                normal     No     OWA Exchange Web Services (EWS) [45mLogin[0m Scanner
+   234  auxiliary/scanner/http/octopusdeploy_[45mlogin[0m                                                 .                normal     No     Octopus Deploy [45mLogin[0m Utility
+   235  auxiliary/scanner/http/onion_omega2_[45mlogin[0m                                                  2019-03-27       normal     No     Onion Omega2 [45mLogin[0m Brute-Force
+   236  auxiliary/scanner/http/openmind_messageos_[45mlogin[0m                                            .                normal     No     OpenMind Message-OS Portal [45mLogin[0m Brute Force Utility
+   237  auxiliary/scanner/openvas/openvas_omp_[45mlogin[0m                                                .                normal     No     OpenVAS OMP [45mLogin[0m Utility
+   238  auxiliary/scanner/openvas/openvas_otp_[45mlogin[0m                                                .                normal     No     OpenVAS OTP [45mLogin[0m Utility
+   239  auxiliary/scanner/openvas/openvas_gsad_[45mlogin[0m                                               .                normal     No     OpenVAS gsad Web Interface [45mLogin[0m Utility
+   240  auxiliary/admin/oracle/oracle_[45mlogin[0m                                                        2008-11-20       normal     No     Oracle Account Discovery
+   241  auxiliary/scanner/http/oracle_ilom_[45mlogin[0m                                                   .                normal     No     Oracle ILO Manager [45mLogin[0m Brute Force Utility
+   242  auxiliary/scanner/oracle/oracle_[45mlogin[0m                                                      .                normal     No     Oracle RDBMS [45mLogin[0m Utility
+   243  auxiliary/admin/oracle/osb_execqr2                                                         2009-08-18       normal     No     Oracle Secure Backup Authentication Bypass/Command Injection Vulnerability
+   244  auxiliary/admin/oracle/osb_execqr3                                                         2010-07-13       normal     No     Oracle Secure Backup Authentication Bypass/Command Injection Vulnerability
+   245  exploit/windows/http/osb_uname_jlist                                                       2010-07-13       [32mexcellent[0m  No     Oracle Secure Backup Authentication Bypass/Command Injection Vulnerability
+   246  auxiliary/scanner/oracle/isqlplus_[45mlogin[0m                                                    .                normal     No     Oracle iSQL*Plus [45mLogin[0m Utility
+   247  auxiliary/scanner/oracle/isqlplus_sidbrute                                                 .                normal     No     Oracle iSQLPlus SID Check
+   248  auxiliary/scanner/http/owa_[45mlogin[0m                                                           .                normal     No     Outlook Web App (OWA) Brute Force Utility
+   249    \_ action: OWA_2003                                                                      .                .          .      OWA version 2003
+   250    \_ action: OWA_2007                                                                      .                .          .      OWA version 2007
+   251    \_ action: OWA_2010                                                                      .                .          .      OWA version 2010
+   252    \_ action: OWA_2013                                                                      .                .          .      OWA version 2013
+   253    \_ action: OWA_2016                                                                      .                .          .      OWA version 2016
+   254  auxiliary/scanner/pop3/pop3_[45mlogin[0m                                                          .                normal     No     POP3 [45mLogin[0m Utility
+   255  exploit/linux/http/pandora_fms_sqli                                                        2014-02-01       [32mexcellent[0m  Yes    Pandora FMS Default Credential / SQLi Remote Code Execution
+   256  auxiliary/scanner/pcanywhere/pcanywhere_[45mlogin[0m                                              .                normal     No     PcAnywhere [45mLogin[0m Scanner
+   257  auxiliary/gather/peplink_bauth_sqli                                                        .                normal     Yes    Peplink Balance routers SQLi
+   258  auxiliary/scanner/http/phpmyadmin_[45mlogin[0m                                                    .                normal     No     PhpMyAdmin [45mLogin[0m Scanner
+   259  exploit/windows/mysql/scrutinizer_upload_exec                                              2012-07-27       [32mexcellent[0m  Yes    Plixer Scrutinizer NetFlow and sFlow Analyzer 9 Default MySQL Credential
+   260  auxiliary/scanner/http/pocketpad_[45mlogin[0m                                                     .                normal     No     PocketPAD [45mLogin[0m Bruteforce Force Utility
+   261  exploit/unix/misc/polycom_hdx_auth_bypass                                                  2013-01-18       normal     Yes    Polycom Command Shell Authorization Bypass
+   262  auxiliary/scanner/postgres/postgres_[45mlogin[0m                                                  .                normal     No     PostgreSQL [45mLogin[0m Utility
+   263  auxiliary/scanner/http/rfcode_reader_enum                                                  .                normal     No     RFCode Reader Web Interface [45mLogin[0m / Bruteforce Utility
+   264  exploit/windows/http/integard_password_bof                                                 2010-09-07       [32mgreat[0m      No     Race River Integard Home/Pro [45mLogin[0mAdmin Password Stack Buffer Overflow
+   265    \_ target: Automatic Targeting                                                           .                .          .      .
+   266    \_ target: Integard Home 2.0.0.9021                                                      .                .          .      .
+   267    \_ target: Integard Pro  2.2.0.9026                                                      .                .          .      .
+   268  auxiliary/scanner/http/radware_appdirector_enum                                            .                normal     No     Radware AppDirector Bruteforce [45mLogin[0m Utility
+   269  exploit/windows/scada/realwin_on_fcs_[45mlogin[0m                                                 2011-03-21       [32mgreat[0m      No     RealWin SCADA Server DATAC [45mLogin[0m Buffer Overflow
+   270  auxiliary/scanner/redis/redis_[45mlogin[0m                                                        .                normal     No     Redis [45mLogin[0m Utility
+   271  exploit/linux/http/riverbed_netprofiler_netexpress_exec                                    2016-06-27       [32mexcellent[0m  Yes    Riverbed SteelCentral NetProfiler/NetExpress Remote Code Execution
+   272  exploit/linux/misc/unidata_udadmin_auth_bypass                                             2023-03-30       [32mexcellent[0m  Yes    Rocket Software Unidata udadmin_server Authentication Bypass
+   273    \_ target: Unix Command                                                                  .                .          .      .
+   274    \_ target: Linux Dropper                                                                 .                .          .      .
+   275  auxiliary/scanner/sap/sap_mgmt_con_brute_[45mlogin[0m                                             .                normal     No     SAP Management Console Brute Force
+   276  auxiliary/scanner/sap/sap_soap_rfc_brute_[45mlogin[0m                                             .                normal     No     SAP SOAP Service RFC_PING [45mLogin[0m Brute Forcer
+   277  auxiliary/scanner/sap/sap_web_gui_brute_[45mlogin[0m                                              .                normal     No     SAP Web GUI [45mLogin[0m Brute Forcer
+   278  auxiliary/scanner/smb/smb_[45mlogin[0m                                                            .                normal     No     SMB [45mLogin[0m Check Scanner
+   279  auxiliary/fuzzers/smb/smb_ntlm1_[45mlogin[0m_corrupt                                              .                normal     No     SMB NTLMv1 [45mLogin[0m Request Corruption
+   280  auxiliary/scanner/snmp/snmp_[45mlogin[0m                                                          .                normal     No     SNMP Community [45mLogin[0m Scanner
+   281  exploit/multi/persistence/ssh_key                                                          1995-07-01       [32mexcellent[0m  Yes    SSH Key Persistence
+   282  auxiliary/scanner/ssh/ssh_[45mlogin[0m                                                            .                normal     No     SSH [45mLogin[0m Check Scanner
+   283  auxiliary/scanner/sage/x3_adxsrv_[45mlogin[0m                                                     .                normal     No     Sage X3 AdxAdmin [45mLogin[0m Scanner
+   284  exploit/linux/http/seagate_nas_php_exec_noauth                                             2015-03-01       normal     Yes    Seagate Business NAS Unauthenticated Remote Command Execution
+   285  auxiliary/scanner/http/sentry_cdu_enum                                                     .                normal     No     Sentry Switched CDU Bruteforce [45mLogin[0m Utility
+   286  auxiliary/scanner/http/sevone_enum                                                         2013-06-07       normal     No     SevOne Network Performance Management Application Brute Force [45mLogin[0m Utility
+   287  auxiliary/scanner/http/softing_sis_[45mlogin[0m                                                   .                normal     No     Softing Secure Integration Server [45mLogin[0m Utility
+   288  exploit/solaris/telnet/ttyprompt                                                           2002-01-18       [32mexcellent[0m  No     Solaris in.telnetd TTYPROMPT Buffer Overflow
+   289  exploit/windows/http/solarwinds_fsm_user[45mlogin[0m                                              2015-03-13       [32mexcellent[0m  Yes    Solarwinds Firewall Security Manager 6.6.5 Client Session Handling Vulnerability
+   290  exploit/windows/http/solarwinds_storage_manager_sql                                        2011-12-07       [32mexcellent[0m  Yes    Solarwinds Storage Manager 5.1.0 SQL Injection
+   291  auxiliary/scanner/sonicwall/sonicwall_[45mlogin[0m                                                .                normal     No     SonicWall HTTP [45mLogin[0m Scanner
+   292  exploit/linux/http/sophos_wpa_iface_exec                                                   2014-04-08       [32mexcellent[0m  No     Sophos Web Protection Appliance Interface Authenticated Arbitrary Command Execution
+   293  exploit/multi/http/splunk_privilege_escalation_cve_2023_32707                              2023-06-01       [32mexcellent[0m  Yes    Splunk "edit_user" Capability Privilege Escalation
+   294    \_ target: Splunk < 9.0.5, 8.2.11, and 8.1.14 / Linux                                    .                .          .      .
+   295    \_ target: Splunk < 9.0.5, 8.2.11, and 8.1.14 / Windows                                  .                .          .      .
+   296  auxiliary/scanner/http/splunk_web_[45mlogin[0m                                                    .                normal     No     Splunk Web Interface [45mLogin[0m Utility
+   297  exploit/multi/http/sugarcrm_webshell_cve_2023_22952                                        2022-12-28       good       No     SugarCRM unauthenticated Remote Code Execution (RCE)
+   298    \_ target: PHP                                                                           .                .          .      .
+   299    \_ target: Unix Command                                                                  .                .          .      .
+   300    \_ target: Linux Dropper                                                                 .                .          .      .
+   301  exploit/multi/http/glassfish_deployer                                                      2011-08-04       [32mexcellent[0m  No     Sun/Oracle GlassFish Server Authenticated Code Execution
+   302    \_ target: Automatic                                                                     .                .          .      .
+   303    \_ target: Java Universal                                                                .                .          .      .
+   304    \_ target: Windows Universal                                                             .                .          .      .
+   305    \_ target: Linux Universal                                                               .                .          .      .
+   306  auxiliary/scanner/http/smt_ipmi_cgi_scanner                                                2013-11-06       normal     No     Supermicro Onboard IPMI CGI Vulnerability Scanner
+   307  exploit/linux/ssh/symantec_smg_ssh                                                         2012-08-27       [32mexcellent[0m  No     Symantec Messaging Gateway 9.5 Default SSH Password Vulnerability
+   308  auxiliary/scanner/http/symantec_web_gateway_[45mlogin[0m                                          .                normal     No     Symantec Web Gateway [45mLogin[0m Utility
+   309  auxiliary/scanner/http/syncovery_linux_[45mlogin[0m                                               .                normal     No     Syncovery For Linux Web-GUI [45mLogin[0m Utility
+   310  auxiliary/scanner/http/syncovery_linux_token_cve_2022_36536                                2022-09-06       normal     Yes    Syncovery For Linux Web-GUI Session Token Brute-Forcer
+   311  auxiliary/scanner/http/synology_forget_passwd_user_enum                                    2011-01-05       normal     No     Synology Forget Password User Enumeration Scanner
+   312  exploit/solaris/dialup/manyargs                                                            2001-12-12       good       No     System V Derived /bin/[45mlogin[0m Extraneous Arguments Buffer Overflow
+   313  auxiliary/fuzzers/tds/tds_[45mlogin[0m_corrupt                                                    .                normal     No     TDS Protocol [45mLogin[0m Request Corruption Fuzzer
+   314  auxiliary/fuzzers/tds/tds_[45mlogin[0m_username                                                   .                normal     No     TDS Protocol [45mLogin[0m Request Username Fuzzer
+   315  exploit/unix/ssh/tectia_passwd_changereq                                                   2012-12-01       [32mexcellent[0m  Yes    Tectia SSH USERAUTH Change Request Password Reset Vulnerability
+   316  auxiliary/scanner/telnet/telnet_[45mlogin[0m                                                      .                normal     No     Telnet [45mLogin[0m Check Scanner
+   317  auxiliary/admin/http/telpho10_credential_dump                                              2016-09-02       normal     No     Telpho10 Backup Credentials Dumper
+   318  auxiliary/scanner/teradata/teradata_odbc_[45mlogin[0m                                             2018-03-30       normal     No     Teradata ODBC [45mLogin[0m Scanner Module
+   319  exploit/linux/http/terramaster_unauth_rce_cve_2021_45837                                   2021-12-24       [32mexcellent[0m  Yes    TerraMaster TOS 4.2.15 or lower - RCE chain from unauthenticated to root via session crafting.
+   320    \_ target: Unix Command                                                                  .                .          .      .
+   321    \_ target: Linux Dropper                                                                 .                .          .      .
+   322  auxiliary/dos/windows/ftp/titan626_site                                                    2008-10-14       normal     No     Titan FTP Server 6.26.630 SITE WHO DoS
+   323  auxiliary/scanner/http/tomcat_mgr_[45mlogin[0m                                                    .                normal     No     Tomcat Application Manager [45mLogin[0m Utility
+   324  exploit/multi/http/trendmicro_threat_discovery_admin_sys_time_cmdi                         2017-04-10       [32mexcellent[0m  Yes    Trend Micro Threat Discovery Appliance admin_sys_time.cgi Remote Command Execution
+   325  auxiliary/gather/twonky_authbypass_logleak                                                 .                normal     No     Twonky Server Log Leak Authentication Bypass
+   326  auxiliary/scanner/http/typo3_bruteforce                                                    .                normal     No     Typo3 [45mLogin[0m Bruteforcer
+   327  exploit/multi/http/ubiquiti_unifi_log4shell                                                2021-12-09       [32mexcellent[0m  Yes    UniFi Network Application Unauthenticated JNDI Injection RCE (via Log4Shell)
+   328    \_ target: Windows                                                                       .                .          .      .
+   329    \_ target: Unix                                                                          .                .          .      .
+   330    \_ AKA: Log4Shell                                                                        .                .          .      .
+   331    \_ AKA: LogJam                                                                           .                .          .      .
+   332  auxiliary/scanner/http/vcms_[45mlogin[0m                                                          .                normal     No     V-CMS [45mLogin[0m Utility
+   333  auxiliary/admin/vmware/terminate_esx_sessions                                              .                normal     No     VMWare Terminate ESX [45mLogin[0m Sessions
+   334  auxiliary/scanner/vmware/vmauthd_[45mlogin[0m                                                     .                normal     No     VMware Authentication Daemon [45mLogin[0m Scanner
+   335  auxiliary/scanner/vmware/vmware_enum_sessions                                              .                normal     No     VMware Enumerate Active Sessions
+   336  auxiliary/scanner/vmware/vmware_screenshot_stealer                                         .                normal     No     VMware Screenshot Stealer
+   337  auxiliary/scanner/vmware/vmware_http_[45mlogin[0m                                                 .                normal     No     VMware Web [45mLogin[0m Scanner
+   338  auxiliary/scanner/vnc/vnc_[45mlogin[0m                                                            .                normal     No     VNC Authentication Scanner
+   339  auxiliary/scanner/varnish/varnish_cli_[45mlogin[0m                                                .                normal     No     Varnish Cache CLI [45mLogin[0m Utility
+   340  exploit/multi/http/visual_mining_netcharts_upload                                          2014-11-03       [32mexcellent[0m  Yes    Visual Mining NetCharts Server Remote Code Execution
+   341  exploit/multi/http/wso2_api_manager_file_upload_rce                                        2024-05-31       [32mexcellent[0m  Yes    WSO2 API Manager Documentation File Upload Remote Code Execution
+   342    \_ target: Automatic                                                                     .                .          .      .
+   343    \_ target: WSO2 API Manager (3.1.0 - 4.0.0)                                              .                .          .      .
+   344    \_ target: WSO2 API Manager (4.1.0)                                                      .                .          .      .
+   345    \_ target: WSO2 API Manager (4.2.0)                                                      .                .          .      .
+   346  exploit/windows/ftp/warftpd_165_pass                                                       1998-03-19       average    No     War-FTPD 1.65 Password Overflow
+   347  exploit/linux/http/watchguard_firebox_unauth_rce_cve_2022_26318                            2022-08-29       good       Yes    WatchGuard XTM Firebox Unauthenticated Remote Command Execution
+   348  auxiliary/admin/webmin/file_disclosure                                                     2006-06-30       normal     No     Webmin File Disclosure
+   349  auxiliary/scanner/http/mybook_live_[45mlogin[0m                                                   .                normal     No     Western Digital MyBook Live [45mLogin[0m Utility
+   350  auxiliary/dos/windows/ftp/winftp230_nlst                                                   2008-09-26       normal     No     WinFTP 2.3.0 NLST Denial of Service
+   351  auxiliary/scanner/winrm/winrm_[45mlogin[0m                                                        .                normal     No     WinRM [45mLogin[0m Utility
+   352  exploit/windows/winrm/winrm_script_exec                                                    2012-11-01       manual     No     WinRM Script Exec Remote Code Execution
+   353  post/windows/gather/credentials/windows_auto[45mlogin[0m                                          .                normal     No     Windows Gather Auto[45mLogin[0m User Credential Extractor
+   354  post/windows/gather/cachedump                                                              .                normal     No     Windows Gather Credential Cache Dump
+   355  post/windows/gather/credentials/ftpx                                                       .                normal     No     Windows Gather FTP Explorer (FTPX) Credential Extraction
+   356  post/windows/gather/credentials/enum_picasa_pwds                                           .                normal     No     Windows Gather Google Picasa Password Extractor
+   357  post/windows/gather/credentials/meebo                                                      .                normal     No     Windows Gather Meebo Password Extractor
+   358  post/windows/gather/credentials/skype                                                      .                normal     No     Windows Gather Skype Saved Password Hash Extraction
+   359  post/windows/gather/credentials/smartftp                                                   .                normal     No     Windows Gather SmartFTP Saved Password Extraction
+   360  post/windows/gather/credentials/steam                                                      .                normal     No     Windows Gather Steam Client Session Collector.
+   361  post/windows/gather/phish_windows_credentials                                              .                normal     No     Windows Gather User Credentials (phishing)
+   362  post/windows/gather/credentials/mremote                                                    .                normal     No     Windows Gather mRemote Saved Password Extraction
+   363  post/windows/manage/change_password                                                        .                normal     No     Windows Manage Change Password
+   364  post/windows/manage/mssql_local_auth_bypass                                                .                normal     No     Windows Manage Local Microsoft SQL Server Authorization Bypass
+   365  post/windows/manage/run_as                                                                 .                normal     No     Windows Manage Run Command As User
+   366  exploit/windows/local/ms13_053_schlamperei                                                 2013-12-01       average    Yes    Windows NTUserMessageCall Win32k Kernel Pool Overflow (Schlamperei)
+   367  post/windows/manage/wdigest_caching                                                        .                normal     No     Windows Post Manage WDigest Credential Caching
+   368  exploit/windows/persistence/registry_active_setup                                          2015-12-01       [32mexcellent[0m  Yes    Windows Registry Active Setup Persistence
+   369  exploit/windows/local/run_as                                                               1999-01-01       [32mexcellent[0m  No     Windows Run Command As User
+   370  auxiliary/scanner/http/wordpress_[45mlogin[0m_enum                                                .                normal     No     WordPress Brute Force and User Enumeration Utility
+   371  exploit/multi/http/wp_king_addons_privilege_escalation                                     2025-10-30       [32mexcellent[0m  Yes    WordPress King Addons for Elementor Unauthenticated Privilege Escalation to RCE
+   372    \_ target: PHP In-Memory                                                                 .                .          .      .
+   373    \_ target: Unix/Linux Command Shell                                                      .                .          .      .
+   374    \_ target: Windows Command Shell                                                         .                .          .      .
+   375  auxiliary/scanner/http/wp_[45mlogin[0mizer_log_sqli                                               2020-10-21       normal     No     WordPress [45mLogin[0mizer log SQLi Scanner
+   376  auxiliary/admin/http/wp_easycart_privilege_escalation                                      2015-02-25       normal     Yes    WordPress WP EasyCart Plugin Privilege Escalation
+   377  auxiliary/admin/http/wp_wplms_privilege_escalation                                         2015-02-09       normal     Yes    WordPress WPLMS Theme Privilege Escalation
+   378  auxiliary/scanner/http/wp_wps_hide_[45mlogin[0m_revealer                                          2021-10-27       normal     No     WordPress WPS Hide [45mLogin[0m [45mLogin[0m Page Revealer
+   379  auxiliary/scanner/http/wp_paid_membership_pro_code_sqli                                    2023-01-12       normal     Yes    Wordpress Paid Membership Pro code Unauthenticated SQLi
+   380  auxiliary/scanner/http/wp_secure_copy_content_protection_sqli                              2021-11-08       normal     Yes    Wordpress Secure Copy Content Protection and Content Locking sccp_id Unauthenticated SQLi
+   381  auxiliary/scanner/http/wordpress_xmlrpc_[45mlogin[0m                                              .                normal     No     Wordpress XML-RPC Username/Password [45mLogin[0m Scanner
+   382  auxiliary/scanner/http/wowza_streaming_engine_manager_[45mlogin[0m                                .                normal     No     Wowza Streaming Engine Manager [45mLogin[0m Utility
+   383  auxiliary/dos/windows/ftp/xmeasy560_nlst                                                   2008-10-13       normal     No     XM Easy Personal FTP Server 5.6.0 NLST DoS
+   384  auxiliary/dos/windows/ftp/xmeasy570_nlst                                                   2009-03-27       normal     No     XM Easy Personal FTP Server 5.7.0 NLST DoS
+   385  exploit/unix/webapp/zpanel_username_exec                                                   2013-06-07       [32mexcellent[0m  Yes    ZPanel 10.0.0.2 htpasswd Module Username Command Execution
+   386  auxiliary/scanner/http/zabbix_[45mlogin[0m                                                        .                normal     No     Zabbix Server Brute Force Utility
+   387  exploit/unix/webapp/zeroshell_exec                                                         2013-09-22       [32mexcellent[0m  Yes    ZeroShell Remote Code Execution
+   388  exploit/multi/http/zpanel_information_disclosure_rce                                       2014-01-30       [32mexcellent[0m  No     Zpanel Remote Unauthenticated RCE
+   389    \_ target: Generic (PHP Payload)                                                         .                .          .      .
+   390    \_ target: Linux x86                                                                     .                .          .      .
+   391  exploit/linux/antivirus/escan_password_exec                                                2014-04-04       [32mexcellent[0m  Yes    eScan Web Management Console Command Injection
+   392  exploit/osx/local/cfprefsd_race_condition                                                  2020-03-18       [32mexcellent[0m  Yes    macOS cfprefsd Arbitrary File Write Local Privilege Escalation
+   393  auxiliary/gather/osticket_arbitrary_file_read                                              2026-01-13       normal     Yes    osTicket Arbitrary File Read via PHP Filter Chains in mPDF
+   394  auxiliary/gather/owncloud_phpinfo_reader                                                   2023-11-21       normal     No     ownCloud Phpinfo Reader
+   395  auxiliary/scanner/http/pfsense_[45mlogin[0m                                                       .                normal     No     pfSense [45mLogin[0m Scanner
+   396  exploit/multi/http/pgadmin_session_deserialization                                         2024-03-04       [32mexcellent[0m  Yes    pgAdmin Session Deserialization RCE
+   397  exploit/multi/http/qdpm_authenticated_rce                                                  2020-11-21       [32mexcellent[0m  Yes    qdPM 9.1 Authenticated Arbitrary PHP File Upload (RCE)
+   398    \_ target: Generic (PHP Payload)                                                         .                .          .      .
+   399    \_ target: Linux x86                                                                     .                .          .      .
+   400    \_ target: Linux x64                                                                     .                .          .      .
+   401    \_ target: Windows x86                                                                   .                .          .      .
+   402    \_ target: Windows x64                                                                   .                .          .      .
+   403  auxiliary/scanner/rservices/rexec_[45mlogin[0m                                                    .                normal     No     rexec Authentication Scanner
+   404  auxiliary/scanner/rservices/r[45mlogin[0m_[45mlogin[0m                                                   .                normal     No     r[45mlogin[0m Authentication Scanner
+   405  auxiliary/scanner/rservices/rsh_[45mlogin[0m                                                      .                normal     No     rsh Authentication Scanner
+   406  exploit/multi/http/vbulletin_getindexablecontent                                           2020-03-12       manual     Yes    vBulletin /ajax/api/content_infraction/getIndexableContent nodeid Parameter SQL Injection
+
+
+Interact with a module by name or index. For example [32minfo 406[0m, [32muse 406[0m or [32muse exploit/multi/http/vbulletin_getindexablecontent[0m
+
+[0m
+
+=== Search: Netkit rshd
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: GNU Classpath grmiregistry
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: Metasploitable root shell
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: 2-4 (RPC #100003)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: ProFTPD 1.3.1
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: MySQL 5.0.51a-3ubuntu5
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: distccd v1 ((GNU) 4.2.4 (Ubuntu 4.2.4-1ubuntu4))
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: PostgreSQL DB 8.3.0 - 8.3.7
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: VNC (protocol 3.3)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: (access denied)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: UnrealIRCd
+[0m
+Matching Modules
+================
+
+   #  Full Name                                   Disclosure Date  Rank       Check  Name
+   -  ---------                                   ---------------  ----       -----  ----
+   0  exploit/unix/irc/unreal_ircd_3281_backdoor  2010-06-12       [32mexcellent[0m  Yes    [45mUnrealIRCD[0m 3.2.8.1 Backdoor Command Execution
+
+
+Interact with a module by name or index. For example [32minfo 0[0m, [32muse 0[0m or [32muse exploit/unix/irc/unreal_ircd_3281_backdoor[0m
+
+[0m
+
+=== Search: UnrealIRCd (Admin email admin@Metasploitable.LAN)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: Apache Jserv (Protocol v1.3)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: Apache Tomcat/Coyote JSP engine 1.1
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: Ruby DRb RMI (Ruby 1.8; path /usr/lib/ruby/1.8/drb)
+[0m[1m[31m[-][0m No results from search
+[0m[1m[31m[-][0m Unknown command: path. Run the [32mhelp[0m command for more details.
+[0m
+
+=== Search: 1 (RPC #100024)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: 1-3 (RPC #100005)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: 1-4 (RPC #100021)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: vsftpd 2.3.4
+[0m
+Matching Modules
+================
+
+   #  Full Name                             Disclosure Date  Rank       Check  Name
+   -  ---------                             ---------------  ----       -----  ----
+   0  exploit/unix/ftp/[45mvsftpd[0m_234_backdoor  2011-07-03       [32mexcellent[0m  Yes    [45mVSFTPD[0m [45m2.3.4[0m Backdoor Command Execution
+
+
+Interact with a module by name or index. For example [32minfo 0[0m, [32muse 0[0m or [32muse exploit/unix/ftp/vsftpd_234_backdoor[0m
+
+[0m
+
+=== Search: OpenSSH 4.7p1 Debian 8ubuntu1 (protocol 2.0)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: Linux telnetd
+[0m
+Matching Modules
+================
+
+   #   Full Name                                              Disclosure Date  Rank       Check  Name
+   -   ---------                                              ---------------  ----       -----  ----
+   0   exploit/[45mlinux[0m/http/asuswrt_lan_rce                     2018-01-22       [32mexcellent[0m  No     AsusWRT LAN Unauthenticated Remote Code Execution
+   1   exploit/[45mlinux[0m/http/dlink_diagnostic_exec_noauth        2013-03-05       [32mexcellent[0m  No     D-Link DIR-645 / DIR-815 diagnostic.php Command Execution
+   2     \_ target: CMD                                       .                .          .      .
+   3     \_ target: [45mLinux[0m mipsel Payload                      .                .          .      .
+   4   exploit/[45mlinux[0m/telnet/gnu_inetutils_auth_bypass         2026-01-26       [32mgreat[0m      No     GNU Inetutils Telnet Authentication Bypass Exploit CVE-2026-24061
+   5   exploit/[45mlinux[0m/misc/hp_jetdirect_path_traversal         2017-04-05       normal     No     HP Jetdirect Path Traversal Arbitrary Code Execution
+   6   exploit/[45mlinux[0m/telnet/telnet_encrypt_keyid              2011-12-23       [32mgreat[0m      No     [45mLinux[0m BSD-derived Telnet Service Encryption Key ID Buffer Overflow
+   7     \_ target: Automatic                                 .                .          .      .
+   8     \_ target: Red Hat Enterprise [45mLinux[0m 3 (krb5-telnet)  .                .          .      .
+   9   exploit/[45mlinux[0m/telnet/netgear_telnetenable              2009-10-30       [32mexcellent[0m  Yes    NETGEAR TelnetEnable
+   10    \_ target: Automatic (detect TCP or UDP)             .                .          .      .
+   11    \_ target: TCP (typically older devices)             .                .          .      .
+   12    \_ target: UDP (typically newer devices)             .                .          .      .
+
+
+Interact with a module by name or index. For example [32minfo 12[0m, [32muse 12[0m or [32muse exploit/linux/telnet/netgear_telnetenable[0m
+After interacting with a module you can manually set a TARGET with [32mset TARGET 'UDP (typically newer devices)'[0m
+
+[0m
+
+=== Search: Postfix smtpd
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: ISC BIND 9.4.2
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: Apache httpd 2.2.8 ((Ubuntu) DAV/2)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: 2 (RPC #100000)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: netkit-rsh rexecd
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: OpenBSD or Solaris rlogind
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: Netkit rshd
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: GNU Classpath grmiregistry
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: Metasploitable root shell
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: 2-4 (RPC #100003)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: ProFTPD 1.3.1
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: MySQL 5.0.51a-3ubuntu5
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: distccd v1 ((GNU) 4.2.4 (Ubuntu 4.2.4-1ubuntu4))
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: PostgreSQL DB 8.3.0 - 8.3.7
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: VNC (protocol 3.3)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: (access denied)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: UnrealIRCd (Admin email admin@Metasploitable.LAN)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: Apache Jserv (Protocol v1.3)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: Apache Tomcat/Coyote JSP engine 1.1
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: Ruby DRb RMI (Ruby 1.8; path /usr/lib/ruby/1.8/drb)
+[0m[1m[31m[-][0m No results from search
+[0m[1m[31m[-][0m Unknown command: path. Run the [32mhelp[0m command for more details.
+[0m
+
+=== Search: 1 (RPC #100024)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: 1-3 (RPC #100005)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: 1-4 (RPC #100021)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: vsftpd 2.3.4
+[0m
+Matching Modules
+================
+
+   #  Full Name                             Disclosure Date  Rank       Check  Name
+   -  ---------                             ---------------  ----       -----  ----
+   0  exploit/unix/ftp/[45mvsftpd[0m_234_backdoor  2011-07-03       [32mexcellent[0m  Yes    [45mVSFTPD[0m [45m2.3.4[0m Backdoor Command Execution
+
+
+Interact with a module by name or index. For example [32minfo 0[0m, [32muse 0[0m or [32muse exploit/unix/ftp/vsftpd_234_backdoor[0m
+
+[0m
+
+=== Search: OpenSSH 4.7p1 Debian 8ubuntu1 (protocol 2.0)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: ISC BIND 9.4.2
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: Apache httpd 2.2.8 ((Ubuntu) DAV/2)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: ProFTPD 1.3.1
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: MySQL 5.0.51a-3ubuntu5
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: distccd v1 ((GNU) 4.2.4 (Ubuntu 4.2.4-1ubuntu4))
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: PostgreSQL DB 8.3.0 - 8.3.7
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: VNC (protocol 3.3)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: Apache Tomcat/Coyote JSP engine 1.1
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: Ruby DRb RMI (Ruby 1.8; path /usr/lib/ruby/1.8/drb)
+[0m[1m[31m[-][0m No results from search
+[0m[1m[31m[-][0m Unknown command: path. Run the [32mhelp[0m command for more details.
+[0m
+
+=== Search: vsftpd 2.3.4
+[0m
+Matching Modules
+================
+
+   #  Full Name                             Disclosure Date  Rank       Check  Name
+   -  ---------                             ---------------  ----       -----  ----
+   0  exploit/unix/ftp/[45mvsftpd[0m_234_backdoor  2011-07-03       [32mexcellent[0m  Yes    [45mVSFTPD[0m [45m2.3.4[0m Backdoor Command Execution
+
+
+Interact with a module by name or index. For example [32minfo 0[0m, [32muse 0[0m or [32muse exploit/unix/ftp/vsftpd_234_backdoor[0m
+
+[0m
+
+=== Search: OpenSSH 4.7p1 Debian 8ubuntu1 (protocol 2.0)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: ISC BIND 9.4.2
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: Apache httpd 2.2.8 ((Ubuntu) DAV/2)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: ProFTPD 1.3.1
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: MySQL 5.0.51a-3ubuntu5
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: distccd v1 ((GNU) 4.2.4 (Ubuntu 4.2.4-1ubuntu4))
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: PostgreSQL DB 8.3.0 - 8.3.7
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: VNC (protocol 3.3)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: Apache Tomcat/Coyote JSP engine 1.1
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: Ruby DRb RMI (Ruby 1.8; path /usr/lib/ruby/1.8/drb)
+[0m[1m[31m[-][0m No results from search
+[0m[1m[31m[-][0m Unknown command: path. Run the [32mhelp[0m command for more details.
+[0m
+
+=== Search: vsftpd 2.3.4
+[0m
+Matching Modules
+================
+
+   #  Full Name                             Disclosure Date  Rank       Check  Name
+   -  ---------                             ---------------  ----       -----  ----
+   0  exploit/unix/ftp/[45mvsftpd[0m_234_backdoor  2011-07-03       [32mexcellent[0m  Yes    [45mVSFTPD[0m [45m2.3.4[0m Backdoor Command Execution
+
+
+Interact with a module by name or index. For example [32minfo 0[0m, [32muse 0[0m or [32muse exploit/unix/ftp/vsftpd_234_backdoor[0m
+
+[0m
+
+=== Search: OpenSSH 4.7p1 Debian 8ubuntu1 (protocol 2.0)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: ISC BIND 9.4.2
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: Apache httpd 2.2.8 ((Ubuntu) DAV/2)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: ProFTPD 1.3.1
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: MySQL 5.0.51a-3ubuntu5
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: distccd v1 ((GNU) 4.2.4 (Ubuntu 4.2.4-1ubuntu4))
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: PostgreSQL DB 8.3.0 - 8.3.7
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: VNC (protocol 3.3)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: Apache Tomcat/Coyote JSP engine 1.1
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: Ruby DRb RMI (Ruby 1.8; path /usr/lib/ruby/1.8/drb)
+[0m[1m[31m[-][0m No results from search
+[0m[1m[31m[-][0m Unknown command: path. Run the [32mhelp[0m command for more details.
+[0m
+
+=== Search: vsftpd 2.3.4
+[0m
+Matching Modules
+================
+
+   #  Full Name                             Disclosure Date  Rank       Check  Name
+   -  ---------                             ---------------  ----       -----  ----
+   0  exploit/unix/ftp/[45mvsftpd[0m_234_backdoor  2011-07-03       [32mexcellent[0m  Yes    [45mVSFTPD[0m [45m2.3.4[0m Backdoor Command Execution
+
+
+Interact with a module by name or index. For example [32minfo 0[0m, [32muse 0[0m or [32muse exploit/unix/ftp/vsftpd_234_backdoor[0m
+
+[0m
+
+=== Search: OpenSSH 4.7p1 Debian 8ubuntu1 (protocol 2.0)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: ISC BIND 9.4.2
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: Apache httpd 2.2.8 ((Ubuntu) DAV/2)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: ProFTPD 1.3.1
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: MySQL 5.0.51a-3ubuntu5
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: distccd v1 ((GNU) 4.2.4 (Ubuntu 4.2.4-1ubuntu4))
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: PostgreSQL DB 8.3.0 - 8.3.7
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: VNC (protocol 3.3)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: Apache Tomcat/Coyote JSP engine 1.1
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: Ruby DRb RMI (Ruby 1.8; path /usr/lib/ruby/1.8/drb)
+[0m[1m[31m[-][0m No results from search
+[0m[1m[31m[-][0m Unknown command: path. Run the [32mhelp[0m command for more details.
+[0m
+
+=== Search: vsftpd 2.3.4
+[0m
+Matching Modules
+================
+
+   #  Full Name                             Disclosure Date  Rank       Check  Name
+   -  ---------                             ---------------  ----       -----  ----
+   0  exploit/unix/ftp/[45mvsftpd[0m_234_backdoor  2011-07-03       [32mexcellent[0m  Yes    [45mVSFTPD[0m [45m2.3.4[0m Backdoor Command Execution
+
+
+Interact with a module by name or index. For example [32minfo 0[0m, [32muse 0[0m or [32muse exploit/unix/ftp/vsftpd_234_backdoor[0m
+
+[0m
+
+=== Search: OpenSSH 4.7p1 Debian 8ubuntu1 (protocol 2.0)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: vsftpd 2.3.4
+[0m
+Matching Modules
+================
+
+   #  Full Name                             Disclosure Date  Rank       Check  Name
+   -  ---------                             ---------------  ----       -----  ----
+   0  exploit/unix/ftp/[45mvsftpd[0m_234_backdoor  2011-07-03       [32mexcellent[0m  Yes    [45mVSFTPD[0m [45m2.3.4[0m Backdoor Command Execution
+
+
+Interact with a module by name or index. For example [32minfo 0[0m, [32muse 0[0m or [32muse exploit/unix/ftp/vsftpd_234_backdoor[0m
+
+[0m
+
+=== Search: OpenSSH 4.7p1 Debian 8ubuntu1 (protocol 2.0)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: vsftpd 2.3.4
+[0m
+Matching Modules
+================
+
+   #  Full Name                             Disclosure Date  Rank       Check  Name
+   -  ---------                             ---------------  ----       -----  ----
+   0  exploit/unix/ftp/[45mvsftpd[0m_234_backdoor  2011-07-03       [32mexcellent[0m  Yes    [45mVSFTPD[0m [45m2.3.4[0m Backdoor Command Execution
+
+
+Interact with a module by name or index. For example [32minfo 0[0m, [32muse 0[0m or [32muse exploit/unix/ftp/vsftpd_234_backdoor[0m
+
+[0m
+
+=== Search: OpenSSH 4.7p1 Debian 8ubuntu1 (protocol 2.0)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: vsftpd 2.3.4
+[0m
+Matching Modules
+================
+
+   #  Full Name                             Disclosure Date  Rank       Check  Name
+   -  ---------                             ---------------  ----       -----  ----
+   0  exploit/unix/ftp/[45mvsftpd[0m_234_backdoor  2011-07-03       [32mexcellent[0m  Yes    [45mVSFTPD[0m [45m2.3.4[0m Backdoor Command Execution
+
+
+Interact with a module by name or index. For example [32minfo 0[0m, [32muse 0[0m or [32muse exploit/unix/ftp/vsftpd_234_backdoor[0m
+
+[0m
+
+=== Search: OpenSSH 4.7p1 Debian 8ubuntu1 (protocol 2.0)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: ISC BIND 9.4.2
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: Apache httpd 2.2.8 ((Ubuntu) DAV/2)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: ProFTPD 1.3.1
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: MySQL 5.0.51a-3ubuntu5
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: distccd v1 ((GNU) 4.2.4 (Ubuntu 4.2.4-1ubuntu4))
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: PostgreSQL DB 8.3.0 - 8.3.7
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: VNC (protocol 3.3)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: Apache Tomcat/Coyote JSP engine 1.1
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: Ruby DRb RMI (Ruby 1.8; path /usr/lib/ruby/1.8/drb)
+[0m[1m[31m[-][0m No results from search
+[0m[1m[31m[-][0m Unknown command: path. Run the [32mhelp[0m command for more details.
+[0m
+
+=== Search: vsftpd 2.3.4
+[0m
+Matching Modules
+================
+
+   #  Full Name                             Disclosure Date  Rank       Check  Name
+   -  ---------                             ---------------  ----       -----  ----
+   0  exploit/unix/ftp/[45mvsftpd[0m_234_backdoor  2011-07-03       [32mexcellent[0m  Yes    [45mVSFTPD[0m [45m2.3.4[0m Backdoor Command Execution
+
+
+Interact with a module by name or index. For example [32minfo 0[0m, [32muse 0[0m or [32muse exploit/unix/ftp/vsftpd_234_backdoor[0m
+
+[0m
+
+=== Search: OpenSSH 4.7p1 Debian 8ubuntu1 (protocol 2.0)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: ISC BIND 9.4.2
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: Apache httpd 2.2.8 ((Ubuntu) DAV/2)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: ProFTPD 1.3.1
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: MySQL 5.0.51a-3ubuntu5
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: distccd v1 ((GNU) 4.2.4 (Ubuntu 4.2.4-1ubuntu4))
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: PostgreSQL DB 8.3.0 - 8.3.7
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: VNC (protocol 3.3)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: Apache Tomcat/Coyote JSP engine 1.1
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: Ruby DRb RMI (Ruby 1.8; path /usr/lib/ruby/1.8/drb)
+[0m[1m[31m[-][0m No results from search
+[0m[1m[31m[-][0m Unknown command: path. Run the [32mhelp[0m command for more details.
+[0m
+
+=== Search: vsftpd 2.3.4
+[0m
+Matching Modules
+================
+
+   #  Full Name                             Disclosure Date  Rank       Check  Name
+   -  ---------                             ---------------  ----       -----  ----
+   0  exploit/unix/ftp/[45mvsftpd[0m_234_backdoor  2011-07-03       [32mexcellent[0m  Yes    [45mVSFTPD[0m [45m2.3.4[0m Backdoor Command Execution
+
+
+Interact with a module by name or index. For example [32minfo 0[0m, [32muse 0[0m or [32muse exploit/unix/ftp/vsftpd_234_backdoor[0m
+
+[0m
+
+=== Search: OpenSSH 4.7p1 Debian 8ubuntu1 (protocol 2.0)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: ISC BIND 9.4.2
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: Apache httpd 2.2.8 ((Ubuntu) DAV/2)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: ProFTPD 1.3.1
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: MySQL 5.0.51a-3ubuntu5
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: distccd v1 ((GNU) 4.2.4 (Ubuntu 4.2.4-1ubuntu4))
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: PostgreSQL DB 8.3.0 - 8.3.7
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: VNC (protocol 3.3)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: Apache Tomcat/Coyote JSP engine 1.1
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: Ruby DRb RMI (Ruby 1.8; path /usr/lib/ruby/1.8/drb)
+[0m[1m[31m[-][0m No results from search
+[0m[1m[31m[-][0m Unknown command: path. Run the [32mhelp[0m command for more details.
+[0m
+

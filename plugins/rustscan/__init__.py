@@ -1,0 +1,1 @@
+"""RustScan plugin package."""
