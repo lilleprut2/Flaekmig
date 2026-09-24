@@ -1,3 +1,4 @@
+import shutil
 import tempfile
 import unittest
 from unittest.mock import patch
@@ -71,11 +72,11 @@ class RustScanEngineTests(unittest.TestCase):
             history = ScanHistoryManager(database.name)
             optimizer = RustScanOptimizer(history)
             expected = {
-                "EXCELLENT": (10000, 1000),
-                "GOOD": (7500, 1500),
-                "FAIR": (5000, 2500),
-                "POOR": (2000, 5000),
-                "UNREACHABLE": (1000, 8000),
+                "EXCELLENT": (1000, 1500),
+                "GOOD": (500, 2000),
+                "FAIR": (100, 3000),
+                "POOR": (25, 6000),
+                "UNREACHABLE": (5, 10000),
             }
             for quality, values in expected.items():
                 profile = NetworkProfile("10.0.0.1", 10.0, 1.0, 20.0, 0.0, quality)
@@ -85,11 +86,11 @@ class RustScanEngineTests(unittest.TestCase):
 
     def test_quality_baseline_values_reach_rustscan_command(self):
         expected = {
-            "EXCELLENT": (10000, 1000),
-            "GOOD": (7500, 1500),
-            "FAIR": (5000, 2500),
-            "POOR": (2000, 5000),
-            "UNREACHABLE": (1000, 8000),
+            "EXCELLENT": (1000, 1500),
+            "GOOD": (500, 2000),
+            "FAIR": (100, 3000),
+            "POOR": (25, 6000),
+            "UNREACHABLE": (5, 10000),
         }
         for quality, (batch_size, timeout_ms) in expected.items():
             profile = NetworkProfile("10.0.0.1", 10.0, 1.0, 20.0, 0.0, quality)
@@ -124,7 +125,7 @@ class RustScanEngineTests(unittest.TestCase):
             with patch("plugins.rustscan.plugin.shutil.which", return_value="/usr/bin/rustscan"):
                 result = plugin.run(Target.from_string("10.0.0.1"))
             self.assertEqual(len(result.ports), 1)
-            self.assertEqual(result.config.batch_size, 10000)
+            self.assertEqual(result.config.batch_size, 1000)
             self.assertEqual(history.count("10.0.0.1"), 1)
             self.assertIn("--batch-size", calls[0])
             history.close()
@@ -133,6 +134,21 @@ class RustScanEngineTests(unittest.TestCase):
         plugin = RustScanPlugin.__new__(RustScanPlugin)
         result = plugin.parse("Open 22/tcp\n80/tcp open\nOpen 22/tcp")
         self.assertEqual([port.port for port in result.ports], [22, 80])
+
+    def test_engine_can_install_rustscan_when_missing(self):
+        from core.engine import Engine
+
+        engine = Engine()
+        engine.available_binaries["rustscan"] = {"binary": None, "python": None}
+        with patch.object(engine, "detect_binaries", return_value={"rustscan": {"binary": "/usr/bin/rustscan", "python": None}}), \
+             patch("platform.system", return_value="linux"), \
+             patch("shutil.which", side_effect=lambda cmd: "/usr/bin/cargo" if cmd == "cargo" else None), \
+             patch("subprocess.run") as run_mock, \
+             patch.object(engine, "write_installed_tools_file"):
+            ok = engine.ensure_tool("rustscan", attempt_install=True)
+
+        self.assertTrue(ok)
+        self.assertTrue(any("cargo install rustscan" in str(call.args[0]) for call in run_mock.call_args_list))
 
     def test_ip_flow_builds_adaptive_command_before_execution(self):
         with tempfile.NamedTemporaryFile(suffix=".db") as database:
@@ -155,12 +171,42 @@ class RustScanEngineTests(unittest.TestCase):
                 )
 
             self.assertEqual(profile.quality, "EXCELLENT")
-            self.assertEqual(decision.config.batch_size, 10000)
-            self.assertEqual(command[:5], ["/usr/bin/rustscan", "-a", "10.0.0.5", "--batch-size", "10000"])
+            self.assertEqual(decision.config.batch_size, 1000)
+            self.assertEqual(command[0], shutil.which("rustscan") or "/usr/bin/rustscan")
+            self.assertEqual(command[1], "-a")
+            self.assertEqual(command[2], "10.0.0.5")
+            self.assertEqual(command[3], "--batch-size")
+            self.assertEqual(command[4], "1000")
             self.assertIn("--range", command)
             self.assertNotIn("-p", command)
             self.assertIn("-sV", command)
             self.assertTrue(command[-1].endswith("/discovery.json"))
+            history.close()
+
+    def test_ip_delicate_mode_forces_batch_size_to_50(self):
+        with tempfile.NamedTemporaryFile(suffix=".db") as database:
+            history = ScanHistoryManager(database.name)
+            profiler = NetworkProfiler()
+            optimizer = RustScanOptimizer(history)
+
+            with patch("core.network_profiler.subprocess.run") as ping_run:
+                ping_run.return_value = type(
+                    "Completed",
+                    (),
+                    {"stdout": "5 packets transmitted, 5 received, 0% packet loss\ntime=5.0 ms\ntime=6.0 ms\ntime=7.0 ms\ntime=8.0 ms\ntime=9.0 ms"},
+                )()
+                profile, decision, command = build_adaptive_rustscan_command(
+                    "10.0.0.5",
+                    history=history,
+                    profiler=profiler,
+                    optimizer=optimizer,
+                    rust_bin="/usr/bin/rustscan",
+                    delicate=True,
+                )
+
+            self.assertEqual(profile.quality, "EXCELLENT")
+            self.assertEqual(decision.config.batch_size, 50)
+            self.assertEqual(command[command.index("--batch-size") + 1], "50")
             history.close()
 
 

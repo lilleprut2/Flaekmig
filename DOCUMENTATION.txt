@@ -60,15 +60,22 @@ packet loss. `RustScanOptimizer` maps the resulting quality to these initial
 values in `core/rustscan_optimizer.py`:
 
   Quality       Batch size   Timeout
-  EXCELLENT     10000        1000 ms
-  GOOD           7500        1500 ms
-  FAIR           5000        2500 ms
-  POOR           2000        5000 ms
-  UNREACHABLE    1000        8000 ms
+  EXCELLENT     1000         1500 ms
+  GOOD           500          2000 ms
+  FAIR           100          3000 ms
+  POOR           25           6000 ms
+  UNREACHABLE    5            10000 ms
+
+The optional `-d` / `--delicate` flag forces the RustScan batch size to 50 while
+retaining the timeout selected by the network profile:
+
+  python3 main.py -ip 192.168.74.129 -d
 
 For the default full-port configuration, RustScan receives `--range 1-65535`.
 RustScan 2.x requires `--range` for a range; `-p 1-65535` is invalid. Nmap is
 then invoked through RustScan with `-sV` and `-oN <absolute discovery path>`.
+Before the raw report is normalized, it is copied to `nmapdump.json` in the
+current working directory for troubleshooting and inspection.
 
 The previous `discovery.json` is removed before each IP scan. If RustScan
 successfully finds no open ports and therefore does not invoke Nmap, the CLI
@@ -172,7 +179,8 @@ Project layout (important files)
 
 - `main.py` — CLI entrypoint. Accepts a single `target` argument and `--doctor`.
 - `core/engine.py` — Decision `Engine` that registers plugins, detects binaries,
-  persists simple tool inventory, prompts for installs, runs plugins, and evaluates
+  persists simple tool inventory, prompts for installs, prepares the BlackArch
+  repository on Arch-based systems when needed, runs plugins, and evaluates
   `Rule`s to produce `Recommendation`s.
 - `core/models.py` — Data models and plugin `Protocol` definitions (Target, PortInfo,
   ScanResult, Recommendation, Plugin interface).
@@ -200,6 +208,10 @@ Design overview
      (`ensure_tool()`), supporting `apt` (Debian/Ubuntu), `brew` (macOS), and
      `pacman` (Arch) with a small per-tool mapping and pip/pipx fallback for Python
      packages.
+   - On Arch-based Linux, check `/etc/pacman.conf` for the BlackArch repository
+     before a pacman install. If it is missing, run the official BlackArch
+     `strap.sh` bootstrap when `curl` is available, otherwise add the repository
+     entries directly, then refresh the pacman database.
    - Execute each selected plugin's `run(target)` method and collect `ScanResult`s.
    - Evaluate each `Rule` against aggregated `ScanResult`s and return deduplicated
      `Recommendation`s.
@@ -264,6 +276,10 @@ Engine details and persistence
   `gobuster` vs `gobuster-bin`, or require `go install`). `ensure_tool` will
   re-run binary detection and persist the updated inventory after an attempted
   install.
+- `Engine.ensure_blackarch_repo_loaded()` runs only on Linux systems identified
+  by `/etc/arch-release`. It returns immediately on other systems or when the
+  BlackArch repository is already present. When setup is needed, it may require
+  `sudo` and returns `False` if the bootstrap or pacman refresh fails.
 - `Engine.write_installed_tools_file(path='installed_tools.txt')` persists a
   normalized mapping to the current working directory. The `main.py --doctor`
   command writes a full doctor JSON next to `main.py` as `installed_tools.txt`.
@@ -277,17 +293,17 @@ CLI behaviours
   3. detect available tools and print a short summary
   4. run the plugin(s) and print `Recommendation`s
 
--- Running `python3 main.py --doctor` detects available tools and writes a
-  fresh `installed_tools.txt` next to `main.py`. IMPORTANT: `--doctor` will
-  NOT attempt to install missing tools — it only generates and overwrites the
-  report to reflect current detection. Use the interactive scan run (see
-  `run_target`) to allow `Engine` to prompt for installs when required.
+-- Running `python3 main.py --doctor` detects available tools, offers to install
+  missing tools, and writes a fresh `installed_tools.txt` next to `main.py`.
+  Pass `--yes` to accept installation prompts automatically. On Arch-based
+  systems, any pacman installation first checks and loads the BlackArch package
+  repository when it is not already configured.
 
 Doctor behavior (safety note)
-- `--doctor` is read-only with respect to system packages and will not run
-  any package manager or attempt installs. This is deliberate to avoid
-  modifying the host during an environment check. The generated file
-  `installed_tools.txt` always replaces the previous copy.
+- `--doctor` without `--yes` asks for confirmation before attempting installs.
+  The `--yes` form may modify system packages and repository configuration, can
+  require elevated privileges, and should be used only when that is intended.
+  The generated file `installed_tools.txt` always replaces the previous copy.
 Install and runtime prompts
 ---------------------------
 
@@ -303,7 +319,7 @@ platform heuristics. Key notes:
 - Non-interactive install (`attempt_install=True`): callers can request that
   `ensure_tool` perform an unattended install attempt using `apt`, `pacman`,
   `brew`, or `pipx`/`pip` as appropriate. Careful: unattended installs may
-  require elevated privileges and are not used by `--doctor`.
+  require elevated privileges and are used by `--doctor --yes`.
 - The internal `pkg_map` in `core/engine.py` contains per-tool package name
   hints for `apt`, `brew`, and `pacman`, plus optional `pip` names for Python
   packages. Maintain and extend that mapping for robust installs across

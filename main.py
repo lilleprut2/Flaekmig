@@ -12,7 +12,7 @@ from core.engine import Engine
 from plugins.nmap.plugin import NmapPlugin
 
 
-RUSTSCAN_STALL_TIMEOUT_SECONDS = 300
+RUSTSCAN_STALL_TIMEOUT_SECONDS = 1200
 
 
 class ProgressSpinner:
@@ -56,6 +56,16 @@ def parse_discovery_services(path):
         data = None
 
     services = []
+    if isinstance(data, list):
+        for entry in data:
+            if not isinstance(entry, dict):
+                continue
+            name = (entry.get("service") or "").strip()
+            version = (entry.get("version") or "").strip()
+            if name:
+                services.append((name, version))
+        return services
+
     if isinstance(data, dict):
         for host in data.get("hosts") or []:
             for port in host.get("ports") or []:
@@ -100,22 +110,82 @@ def has_msf_exploit_results(output):
 
 
 def has_version_number(detail):
-    """Return whether service details contain a numeric dotted version."""
-    return bool(re.search(r"\b\d+(?:\.\d+)+(?:[a-zA-Z]+\d*)?\b", detail or ""))
+    """Return whether service details contain a software or OS version."""
+    text = detail or ""
+    return bool(
+        re.search(r"\b\d+(?:\.\d+)+(?:[a-zA-Z]+\d*)?\b", text)
+        or re.search(r"\b(?:Windows Server|Windows)\s+\d{4}(?:\s+R\d)?\b", text, re.IGNORECASE)
+    )
+
+
+def build_metasploit_search_terms(service, detail):
+    """Build focused Metasploit search terms from an Nmap service banner."""
+    text = (detail or "").strip()
+    windows_server = re.search(
+        r"\b(Windows Server\s+\d{4}(?:\s+R\d)?)\b", text, re.IGNORECASE
+    )
+    if windows_server:
+        return [windows_server.group(1)]
+    return [text] if text else []
 
 
 def write_empty_discovery_report(path, target):
-    """Write a valid Nmap-style report when RustScan found no ports to inspect."""
+    """Write an empty JSON discovery report when RustScan finds no ports."""
+    write_json_discovery_report(path, [])
+
+
+def write_json_discovery_report(path, services):
+    """Write a JSON array of service objects: [{"port": 80, "service": "Apache", "version": "2.4.49"}]"""
+    records = []
+    for port, service, version in services:
+        records.append({
+            "port": int(port),
+            "service": service,
+            "version": version,
+        })
     with open(path, "w", encoding="utf-8") as discovery_file:
-        discovery_file.write(f"# RustScan scan report for {target}\n")
-        discovery_file.write(f"Nmap scan report for {target}\n")
-        discovery_file.write("Host is up.\n\n")
-        discovery_file.write("PORT STATE SERVICE VERSION\n")
-        discovery_file.write(f"# No open ports found for {target}\n")
+        json.dump(records, discovery_file, indent=2)
+        discovery_file.write("\n")
+
+
+def rewrite_discovery_report_json(path):
+    """Rewrite a raw Nmap-style discovery report to the JSON object format expected by downstream tools."""
+    with open(path, "r", encoding="utf-8") as discovery_file:
+        raw_text = discovery_file.read()
+
+    try:
+        data = json.loads(raw_text)
+        if isinstance(data, list):
+            write_json_discovery_report(path, [(entry.get("port", 0), entry.get("service", ""), entry.get("version", "")) for entry in data])
+            return
+    except json.JSONDecodeError:
+        pass
+
+    entries = []
+    for line in raw_text.splitlines():
+        match = re.match(r"^\s*(\d+)\/tcp\s+open\s+(\S+)(?:\s+\S+\s+(.*))?$", line)
+        if not match:
+            continue
+        port, service_name, remainder = match.groups()
+        detail = (remainder or "").strip()
+        parts = detail.split()
+        if parts and parts[0].lower() in {"syn-ack", "conn-refused", "no-response", "reset", "admin-prohibited", "host-unreach", "port-unreach"}:
+            detail = " ".join(parts[1:])
+        version = detail or ""
+        entries.append((int(port), service_name, version))
+    write_json_discovery_report(path, entries)
+
+
+def dump_raw_nmap_output(source_path, dump_path="nmapdump.json"):
+    """Copy the raw Nmap output before the discovery report is normalized."""
+    with open(source_path, "r", encoding="utf-8") as source_file:
+        raw_text = source_file.read()
+    with open(dump_path, "w", encoding="utf-8") as dump_file:
+        dump_file.write(raw_text)
 
 
 def build_adaptive_rustscan_command(
-    target_ip, history=None, profiler=None, optimizer=None, rust_bin=None, output_path="discovery.json"
+    target_ip, history=None, profiler=None, optimizer=None, rust_bin=None, output_path="discovery.json", delicate=False
 ):
     """Profile the target and build a rustscan command tuned to the measured network quality."""
     import os
@@ -132,6 +202,9 @@ def build_adaptive_rustscan_command(
     profile = profiler.profile(target_ip)
     decision = optimizer.select_config(profile, target_ip)
     config = decision.config
+    if delicate:
+        config = type(config)(batch_size=50, timeout_ms=config.timeout_ms, ulimit=config.ulimit, ports=config.ports, nmap_args=config.nmap_args)
+        decision = type(decision)(config=config, reason="delicate mode: fixed batch size 50", history_count=decision.history_count)
 
     exe = shutil.which("rustscan") or rust_bin
     if not exe:
@@ -165,6 +238,7 @@ def main():
     parser.add_argument("--doctor", action="store_true", help="Run environment/tools health check and exit")
     parser.add_argument("--yes", action="store_true", help="Automatically say yes to install prompts (non-interactive)")
     parser.add_argument("-ip", "--ip", dest="ip", help="Run rustscan against an IPv4 address and save results to Discovery.JSON")
+    parser.add_argument("-d", "--delicate", action="store_true", help="Run RustScan in delicate mode with batch size fixed at 50")
     args = parser.parse_args()
 
     engine = Engine()
@@ -280,8 +354,19 @@ def main():
             rust_path = rust_info
 
         if not rust_path:
-            print("rustscan is not installed or not found on PATH. Aborting rustscan run.")
-        else:
+            print("rustscan is not installed or not found on PATH.")
+            if engine.ensure_tool("rustscan"):
+                rust_info = engine.available_binaries.get("rustscan")
+                if isinstance(rust_info, dict):
+                    rust_path = rust_info.get("binary")
+                else:
+                    rust_path = rust_info
+                if not rust_path:
+                    rust_path = shutil.which("rustscan")
+            if not rust_path:
+                print("Aborting rustscan run because installation was not possible.")
+                rust_path = None
+        if rust_path:
             from core.statistics import ScanHistoryManager
 
             history = ScanHistoryManager()
@@ -295,6 +380,7 @@ def main():
                 history=history,
                 rust_bin=rust_path,
                 output_path=discovery_path,
+                delicate=args.delicate,
             )
             config = decision.config
             print(
@@ -375,6 +461,12 @@ def main():
                     if not os.path.exists(discovery_path):
                         write_empty_discovery_report(discovery_path, args.ip)
                         print(f"No open ports found; wrote empty discovery report to {discovery_path}")
+                    else:
+                        try:
+                            dump_raw_nmap_output(discovery_path)
+                            rewrite_discovery_report_json(discovery_path)
+                        except Exception as exc:
+                            print(f"Failed to convert discovery report to JSON format: {exc}")
                     print("rustscan completed")
                 history.record_scan(
                     target=args.ip,
@@ -417,24 +509,24 @@ def main():
                         msf_out = os.path.join(os.path.dirname(__file__), "msffindings.txt")
                         for svc, ver in uniq:
                             # Product/version names are what Metasploit indexes;
-                            # skip services without attached product/version data.
-                            term = ver.strip()
-                            cmd = [msf_path, "-q", "-x", f"search {term}; exit"]
-                            try:
-                                with ProgressSpinner(f"Searching Metasploit for {term}"):
-                                    completed = subprocess.run(cmd, check=False, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
-                                output = completed.stdout or ""
-                                if has_msf_module_results(output):
-                                    print(f"\n=== Metasploit results: {term} ===")
-                                    print(output, end="" if output.endswith("\n") else "\n")
-                                if has_msf_exploit_results(output) and term not in msf_patch_targets:
-                                    msf_patch_targets.append(term)
-                                with open(msf_out, "a", encoding="utf-8") as mf:
-                                    mf.write(f"=== Search: {term}\n")
-                                    mf.write(output)
-                                    mf.write("\n\n")
-                            except Exception as e:
-                                print(f"msfconsole search failed for {term}: {e}")
+                            # search focused terms for banners such as Windows Server 2008 R2.
+                            for term in build_metasploit_search_terms(svc, ver):
+                                cmd = [msf_path, "-q", "-x", f"search {term}; exit"]
+                                try:
+                                    with ProgressSpinner(f"Searching Metasploit for {term}"):
+                                        completed = subprocess.run(cmd, check=False, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
+                                    output = completed.stdout or ""
+                                    if has_msf_module_results(output):
+                                        print(f"\n=== Metasploit results: {term} ===")
+                                        print(output, end="" if output.endswith("\n") else "\n")
+                                    if has_msf_exploit_results(output) and term not in msf_patch_targets:
+                                        msf_patch_targets.append(term)
+                                    with open(msf_out, "a", encoding="utf-8") as mf:
+                                        mf.write(f"=== Search: {term}\n")
+                                        mf.write(output)
+                                        mf.write("\n\n")
+                                except Exception as e:
+                                    print(f"msfconsole search failed for {term}: {e}")
                     else:
                         print("RustScan did not produce discovery.json; skipping Metasploit searches")
                 elif rc != 0:

@@ -18,9 +18,76 @@ class EngineResult:
 
 
 class Engine:
+    @staticmethod
+    def ensure_blackarch_repo_loaded() -> bool:
+        """Ensure BlackArch is configured on Arch-based Linux systems before install attempts.
+
+        Returns True when the repo is already loaded or has been configured successfully.
+        """
+        import os
+        import platform
+        import subprocess
+
+        if platform.system().lower() != "linux":
+            return True
+
+        arch_release = "/etc/arch-release"
+        pacman_conf = "/etc/pacman.conf"
+
+        if not os.path.exists(arch_release):
+            return True
+
+        if not shutil.which("pacman"):
+            return True
+
+        try:
+            with open(pacman_conf, "r", encoding="utf-8") as fh:
+                content = fh.read()
+        except OSError:
+            content = ""
+
+        if "blackarch" in content.lower():
+            return True
+
+        commands = []
+        if shutil.which("curl"):
+            commands.extend([
+                "curl -fsSL https://blackarch.org/strap.sh -o /tmp/blackarch-strap.sh",
+                "chmod +x /tmp/blackarch-strap.sh",
+                "sudo /tmp/blackarch-strap.sh",
+            ])
+        else:
+            commands.extend([
+                'echo "[blackarch]" | sudo tee -a /etc/pacman.conf >/dev/null',
+                'echo "Include = /etc/pacman.d/blackarch-mirrorlist" | sudo tee -a /etc/pacman.conf >/dev/null',
+            ])
+
+        commands.append("sudo pacman -Syy --noconfirm")
+
+        for command in commands:
+            try:
+                subprocess.run(command, shell=True, check=True)
+            except subprocess.CalledProcessError:
+                return False
+
+        return True
+
+    @staticmethod
+    def _ensure_user_bin_dirs_on_path() -> None:
+        """Ensure common user-install locations are visible to shutil.which()."""
+        import os
+
+        for candidate in (os.path.expanduser("~/.cargo/bin"), os.path.expanduser("~/.local/bin")):
+            if not os.path.isdir(candidate):
+                continue
+            parts = os.environ.get("PATH", "").split(os.pathsep)
+            if candidate not in parts:
+                os.environ["PATH"] = candidate + os.pathsep + os.environ.get("PATH", "")
+
     def __init__(self):
         self.plugins: Dict[str, Plugin] = {}
         self.rules: List[Rule] = default_rules()
+        self._ensure_user_bin_dirs_on_path()
         # map of binary name -> absolute path or None
         self.available_binaries: Dict[str, Optional[str]] = self.detect_binaries()
         # merge saved inventory if present
@@ -113,8 +180,10 @@ class Engine:
             if ans != "y":
                 return False
 
+        self._ensure_user_bin_dirs_on_path()
+
         # Propose platform-specific install commands using a mapping per OS
-        import platform, subprocess, shutil
+        import platform, subprocess, shutil, os
 
         system = platform.system().lower()
 
@@ -125,6 +194,7 @@ class Engine:
             "nuclei": {"apt": "nuclei", "brew": "nuclei", "pacman": "nuclei"},
             "amass": {"apt": "amass", "brew": "amass", "pacman": "amass"},
             "subfinder": {"apt": "subfinder", "brew": "subfinder", "pacman": "subfinder"},
+            "rustscan": {"apt": "rustscan", "brew": "rustscan", "pacman": "rustscan", "cargo": "rustscan"},
             "impacket": {"pip": "impacket"},
             "bloodhound-python": {"pip": "bloodhound"},
             "sqlmap": {"apt": "sqlmap", "brew": "sqlmap", "pacman": "sqlmap"},
@@ -136,23 +206,30 @@ class Engine:
         install_cmd = None
         # choose install method based on OS and mapping availability
         if system == "linux":
-            # prefer pacman if present (Arch/Manjaro). Do NOT perform a full system
-            # upgrade; only install the requested package(s).
+            self.ensure_blackarch_repo_loaded()
             if shutil.which("pacman"):
                 pkg = mapping.get("pacman") or mapping.get("apt") or tool_name
                 install_cmd = f"sudo pacman -S --noconfirm {pkg}"
             elif shutil.which("apt-get"):
                 pkg = mapping.get("apt") or tool_name
                 install_cmd = f"sudo apt-get update && sudo apt-get install -y {pkg}"
+            elif mapping.get("cargo") and shutil.which("cargo"):
+                pkg = mapping.get("cargo") or tool_name
+                install_cmd = f"cargo install {pkg} --locked"
+            elif shutil.which("cargo"):
+                install_cmd = f"cargo install {tool_name} --locked"
             else:
-                print("No supported package manager found (pacman/apt). Please install the tool manually.")
+                print("No supported package manager found (pacman/apt/cargo). Please install the tool manually.")
                 return False
         elif system == "darwin":
-            # Prefer Homebrew on macOS. If brew isn't present, do not attempt to run
-            # a non-existent command; instead, offer a clear manual instruction.
             if shutil.which("brew"):
                 pkg = mapping.get("brew") or mapping.get("apt") or tool_name
                 install_cmd = f"brew install {pkg}"
+            elif mapping.get("cargo") and shutil.which("cargo"):
+                pkg = mapping.get("cargo") or tool_name
+                install_cmd = f"cargo install {pkg} --locked"
+            elif shutil.which("cargo"):
+                install_cmd = f"cargo install {tool_name} --locked"
             else:
                 # If the missing tool is a python package, try pipx/pip as fallback
                 if mapping.get("pip"):
@@ -178,6 +255,9 @@ class Engine:
             else:
                 install_cmd = f"python3 -m pip install --user {pkg}"
 
+        if not install_cmd and shutil.which("cargo"):
+            install_cmd = f"cargo install {tool_name} --locked"
+
         if not install_cmd:
             print("Automatic install is not supported for this tool on this platform. Please install manually.")
             return False
@@ -189,10 +269,11 @@ class Engine:
             print("Install command failed or requires manual steps.")
             return False
 
-        # Re-detect this binary
+        # Re-detect this binary after updating PATH so Cargo-installed tools are immediately usable.
         new_map = self.detect_binaries([tool_name])
         # merge into available_binaries
-        self.available_binaries[tool_name] = new_map.get(tool_name)
+        detected = new_map.get(tool_name, {"binary": None, "python": None})
+        self.available_binaries[tool_name] = detected
         # persist
         try:
             self.write_installed_tools_file()
@@ -307,6 +388,7 @@ class Engine:
         - `binary`: path or None
         - `python`: True/False/None (None means not applicable)
         """
+        self._ensure_user_bin_dirs_on_path()
         # Map logical names -> probes and optional python module names
         tool_map = {
             "nmap": {"bins": ["nmap"]},

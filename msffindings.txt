@@ -1576,3 +1576,75 @@ Interact with a module by name or index. For example [32minfo 0[0m, [32muse 0
 [0m[1m[31m[-][0m Unknown command: path. Run the [32mhelp[0m command for more details.
 [0m
 
+=== Search: CUPS 2.3
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+[0m[1m[31m[-][0m No results from search
+[0m
+
+=== Search: Windows Server 2008 R2
+[0m
+Matching Modules
+================
+
+   #   Full Name                                                           Disclosure Date  Rank       Check  Name
+   -   ---------                                                           ---------------  ----       -----  ----
+   0   auxiliary/parser/unattend                                           .                normal     No     Auxiliary Parser [45mWindows[0m Unattend Passwords
+   1   exploit/[45mwindows[0m/rdp/cve_2019_0708_bluekeep_rce                      2019-05-14       manual     Yes    CVE-2019-0708 BlueKeep RDP Remote [45mWindows[0m Kernel Use After Free
+   2     \_ target: Automatic targeting via fingerprinting                 .                .          .      .
+   3     \_ target: [45mWindows[0m 7 SP1 / [45m2008[0m [45mR2[0m (6.1.7601 x64)                 .                .          .      .
+   4     \_ target: [45mWindows[0m 7 SP1 / [45m2008[0m [45mR2[0m (6.1.7601 x64 - Virtualbox 6)  .                .          .      .
+   5     \_ target: [45mWindows[0m 7 SP1 / [45m2008[0m [45mR2[0m (6.1.7601 x64 - VMWare 14)     .                .          .      .
+   6     \_ target: [45mWindows[0m 7 SP1 / [45m2008[0m [45mR2[0m (6.1.7601 x64 - VMWare 15)     .                .          .      .
+   7     \_ target: [45mWindows[0m 7 SP1 / [45m2008[0m [45mR2[0m (6.1.7601 x64 - VMWare 15.1)   .                .          .      .
+   8     \_ target: [45mWindows[0m 7 SP1 / [45m2008[0m [45mR2[0m (6.1.7601 x64 - Hyper-V)       .                .          .      .
+   9     \_ target: [45mWindows[0m 7 SP1 / [45m2008[0m [45mR2[0m (6.1.7601 x64 - AWS)           .                .          .      .
+   10    \_ target: [45mWindows[0m 7 SP1 / [45m2008[0m [45mR2[0m (6.1.7601 x64 - QEMU/KVM)      .                .          .      .
+   11  exploit/multi/http/cisco_dcnm_upload                                2013-09-18       [32mexcellent[0m  Yes    Cisco Prime Data Center Network Manager Arbitrary File Upload
+   12  exploit/[45mwindows[0m/http/ektron_xslt_exec_ws                            2015-02-05       [32mexcellent[0m  Yes    Ektron 8.5, 8.7, 9.0 XSLT Transform Remote Code Execution
+   13  exploit/[45mwindows[0m/misc/hp_dataprotector_encrypted_comms               2016-04-18       normal     Yes    HP Data Protector Encrypted Communication Remote Command Execution
+   14  exploit/[45mwindows[0m/smb/ms09_050_smb2_negotiate_func_index              2009-09-07       good       No     MS09-050 Microsoft SRV2.SYS SMB Negotiate ProcessID Function Table Dereference
+   15  exploit/[45mwindows[0m/local/ms13_005_hwnd_broadcast                       2012-11-27       [32mexcellent[0m  No     MS13-005 HWND_BROADCAST Low to Medium Integrity Privilege Escalation
+   16    \_ target: [45mWindows[0m x86                                            .                .          .      .
+   17    \_ target: [45mWindows[0m x64                                            .                .          .      .
+   18  exploit/[45mwindows[0m/smb/ms17_010_eternalblue                            2017-03-14       average    Yes    MS17-010 EternalBlue SMB Remote [45mWindows[0m Kernel Pool Corruption
+   19    \_ target: Automatic Target                                       .                .          .      .
+   20    \_ target: [45mWindows[0m 7                                              .                .          .      .
+   21    \_ target: [45mWindows[0m Embedded Standard 7                            .                .          .      .
+   22    \_ target: [45mWindows[0m [45mServer[0m [45m2008[0m [45mR2[0m                                 .                .          .      .
+   23    \_ target: [45mWindows[0m 8                                              .                .          .      .
+   24    \_ target: [45mWindows[0m 8.1                                            .                .          .      .
+   25    \_ target: [45mWindows[0m [45mServer[0m 2012                                    .                .          .      .
+   26    \_ target: [45mWindows[0m 10 Pro                                         .                .          .      .
+   27    \_ target: [45mWindows[0m 10 Enterprise Evaluation                       .                .          .      .
+   28  auxiliary/dos/[45mwindows[0m/smb/ms09_050_smb2_negotiate_pidhigh           .                normal     No     Microsoft SRV2.SYS SMB Negotiate ProcessID Function Table Dereference
+   29  auxiliary/dos/[45mwindows[0m/smb/ms10_006_negotiate_response_loop          .                normal     No     Microsoft [45mWindows[0m 7 / [45mServer[0m [45m2008[0m [45mR2[0m SMB Client Infinite Loop
+   30  exploit/[45mwindows[0m/http/oracle_endeca_exec                             2013-07-16       [32mexcellent[0m  Yes    Oracle Endeca [45mServer[0m Remote Command Execution
+   31  exploit/multi/http/rocket_[45mserver[0mgraph_file_requestor_rce            2013-10-30       [32mgreat[0m      Yes    Rocket [45mServer[0mgraph Admin Center fileRequestor Remote Code Execution
+   32    \_ target: Linux (Native Payload)                                 .                .          .      .
+   33    \_ target: Linux (CMD Payload)                                    .                .          .      .
+   34    \_ target: [45mWindows[0m / VB Script                                    .                .          .      .
+   35    \_ target: [45mWindows[0m CMD                                            .                .          .      .
+   36  exploit/[45mwindows[0m/http/sap_configservlet_exec_noauth                  2012-11-01       [32mgreat[0m      Yes    SAP ConfigServlet Remote Code Execution
+   37  exploit/[45mwindows[0m/local/cve_2018_8453_win32k_priv_esc                 2018-10-09       manual     No     [45mWindows[0m NtUserSetWindowFNID Win32k User Callback
+   38  exploit/[45mwindows[0m/local/ms18_8120_win32k_privesc                      2018-05-09       good       No     [45mWindows[0m SetImeInfoEx Win32k NULL Pointer Dereference
+   39    \_ target: Automatic                                              .                .          .      .
+   40    \_ target: [45mWindows[0m 7 x64                                          .                .          .      .
+   41    \_ target: [45mWindows[0m 7 x86                                          .                .          .      .
+
+
+Interact with a module by name or index. For example [32minfo 41[0m, [32muse 41[0m or [32muse exploit/windows/local/ms18_8120_win32k_privesc[0m
+After interacting with a module you can manually set a TARGET with [32mset TARGET 'Windows 7 x86'[0m
+
+[0m
+
+=== Search: Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+[0m[1m[31m[-][0m No results from search
+[0m
+

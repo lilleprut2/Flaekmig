@@ -23,11 +23,11 @@ class RustScanOptimizer:
     """Choose a safe baseline and cautiously adapt it from observed scan history."""
 
     BASELINES: Dict[str, Tuple[int, int]] = {
-        "EXCELLENT": (10000, 1000),
-        "GOOD": (7500, 1500),
-        "FAIR": (5000, 2500),
-        "POOR": (2000, 5000),
-        "UNREACHABLE": (1000, 8000),
+        "EXCELLENT": (4500, 1500),
+        "GOOD": (1000, 2000),
+        "FAIR": (200, 3000),
+        "POOR": (50, 6000),
+        "UNREACHABLE": (50, 10000),
     }
 
     def __init__(self, history: Optional[ScanHistoryManager] = None, minimum_history: int = 10):

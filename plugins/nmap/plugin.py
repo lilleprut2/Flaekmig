@@ -4,6 +4,7 @@ from typing import List
 import shutil
 import subprocess
 import re
+from pathlib import Path
 
 from core.models import Plugin, Target, ScanResult, PortInfo
 
@@ -14,6 +15,11 @@ class NmapPlugin:
     required_binary = "nmap"
     supported_targets = ["host", "cidr"]
 
+    @staticmethod
+    def dump_raw_output(output: str, path: str = "nmapdump.json") -> None:
+        """Save the complete raw Nmap output for later inspection."""
+        Path(path).write_text(output, encoding="utf-8")
+
     def run(self, target: Target) -> ScanResult:
         if shutil.which(self.required_binary) is None:
             raise RuntimeError("nmap binary not found")
@@ -22,6 +28,7 @@ class NmapPlugin:
         cmd = ["nmap", "-sS", "-p-", "-oG", "-", target.host]
         proc = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
         out = proc.stdout if proc.returncode == 0 else proc.stderr
+        self.dump_raw_output(out)
         return self.parse(out)
 
     def parse(self, output: str) -> ScanResult:
