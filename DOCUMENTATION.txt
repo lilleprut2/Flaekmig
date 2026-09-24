@@ -41,8 +41,56 @@ CLI
 
 - main.py
   - Minimal CLI entrypoint.
-  - Parses a target and optional plugin name list.
-  - Creates an `Engine`, registers the sample `nmap` plugin, runs the scan, and prints recommendations.
+  - Parses a target, optional plugin name list, `--doctor`, and `-ip`/`--ip`.
+  - Creates an `Engine`, registers the sample `nmap` plugin, runs the standard
+    workflow, and prints recommendations.
+  - The `-ip` path profiles the address, selects an adaptive RustScan
+    configuration, runs RustScan with Nmap service detection, writes the current
+    `discovery.json`, and searches version-bearing services with `msfconsole`.
+
+Adaptive RustScan IP workflow
+-----------------------------
+
+Example:
+
+  python3 main.py -ip 192.168.74.129
+
+Before RustScan starts, `NetworkProfiler` measures responsiveness, latency, and
+packet loss. `RustScanOptimizer` maps the resulting quality to these initial
+values in `core/rustscan_optimizer.py`:
+
+  Quality       Batch size   Timeout
+  EXCELLENT     10000        1000 ms
+  GOOD           7500        1500 ms
+  FAIR           5000        2500 ms
+  POOR           2000        5000 ms
+  UNREACHABLE    1000        8000 ms
+
+For the default full-port configuration, RustScan receives `--range 1-65535`.
+RustScan 2.x requires `--range` for a range; `-p 1-65535` is invalid. Nmap is
+then invoked through RustScan with `-sV` and `-oN <absolute discovery path>`.
+
+The previous `discovery.json` is removed before each IP scan. If RustScan
+successfully finds no open ports and therefore does not invoke Nmap, the CLI
+writes an empty target-specific report instead of leaving stale data. Failed
+scans do not trigger Metasploit searches.
+
+The CLI uses a progress spinner while waiting. If RustScan produces no output
+for 300 seconds, it is treated as stalled, terminated, and force-killed after
+a five-second cleanup grace period if needed. This prevents an indefinite
+spinner while allowing slow full-port scans to finish.
+
+Metasploit integration
+----------------------
+
+- `msfconsole` searches use only services with a numeric version detected in
+  the current `discovery.json`.
+- Search output is appended to `msffindings.txt` and actual module matches are
+  displayed in the console.
+- `Patch <product/version>` recommendations are emitted only when the search
+  contains an `exploit/...` module.
+- Services without version information are intentionally skipped because broad
+  service-name searches produce noisy results.
 
 Plugins
 -------
@@ -83,6 +131,10 @@ Usage notes
 - Running tests:
 
   python3 -m unittest discover -v
+
+- Running an adaptive IP scan:
+
+  python3 main.py -ip 192.168.74.129
 
 Extending the project
 ---------------------
